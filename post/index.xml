@@ -6,26 +6,25 @@
         <description>Recent content in Posts on 静语忆昔</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 08 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.alienergy.eu.org/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Blog Test</title>
-        <link>https://www.alienergy.eu.org/p/blog-test/</link>
-        <pubDate>Fri, 08 Jul 2022 00:00:00 +0000</pubDate>
+        <lastBuildDate>Mon, 11 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.alienergy.eu.org/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>聊聊我为什么写博客</title>
+        <link>https://www.alienergy.eu.org/p/life-write/</link>
+        <pubDate>Mon, 11 Jul 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/blog-test/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>123</title>
-        <link>https://www.alienergy.eu.org/p/123-chinese/</link>
-        <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
-        
-        <guid>https://www.alienergy.eu.org/p/123-chinese/</guid>
-        <description></description>
+        <guid>https://www.alienergy.eu.org/p/life-write/</guid>
+        <description>&lt;img src="https://www.alienergy.eu.org/p/life-write/life-title.jpg" alt="Featured image of post 聊聊我为什么写博客" /&gt;&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;很早之前，我就已经了解过博客了，一直想搭建个，但当时心里这是想搭着玩，并没有想到搭好后的事情，还觉得浪费时间，所以就不了了之了。去年下半年使用服务器搭了WorldPress，使用了一下，虽然主题丰富插件多，但是运行起来需要的服务器资源多，我当时的也是测试机，之后又是不想理的状态，今年年初，偶尔看到使用Vercel部署Hexo的教程，当时的我并不知道WorldPress与Hexo的区别，在我搭建完后，试写时发现和WorldPress写作方式不一样，需要学会.md文件的编写，然后我又停滞了。一直到了6月底，写博客的心越来越强烈，从而不断地参考资料，经过层层筛选，最后使用Hugo+GithubPages方案搭建了这个博客。&lt;/p&gt;
+&lt;h2 id=&#34;写博客带来的价值&#34;&gt;写博客带来的价值&lt;/h2&gt;
+&lt;h4 id=&#34;1保持整理资料的习惯&#34;&gt;1、保持整理资料的习惯&lt;/h4&gt;
+&lt;p&gt;在不断学习的过程中，我收藏的文件资料也越来越多，因为自己是个懒惰的人，虽然一直想着改变，所以在日积月累的情况下，我收藏的资料杂乱无章，如一些教程，明明已经学习过，但是当我看到时还是会继续去收藏，写博客的话就可以作为自己资料进行修改整理，极大减少了重复的事情，也推动着自己保持良好的习惯。&lt;/p&gt;
+&lt;h4 id=&#34;2加强文字表达能力&#34;&gt;2、加强文字表达能力&lt;/h4&gt;
+&lt;p&gt;不要怕自己写的东西没有价值，不值得被传播，首先要相信，每个人都有自己独特的视角。“独特的视角”跟职能、资历、经验都无关，只需要一双能够发现自己独特视角的眼睛。不管你是刚步入职场还是已经工作了20年，不管你是一个实习生还是一个管理者，不管你是哪个部门/岗位，都有自己独特的视角。前提是，要有独立思考的能力和习惯，并且能够把自己的思考用文字表达出来。好的内容会自己传播，写作的门槛不在于文字功底，而在于思考深度。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>Chinese Test</title>
         <link>https://www.alienergy.eu.org/p/test-chinese/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+        <pubDate>Wed, 09 Sep 2020 23:51:36 +0800</pubDate>
         
         <guid>https://www.alienergy.eu.org/p/test-chinese/</guid>
         <description>&lt;img src="https://www.alienergy.eu.org/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" /&gt;&lt;h2 id=&#34;正文测试&#34;&gt;正文测试&lt;/h2&gt;
