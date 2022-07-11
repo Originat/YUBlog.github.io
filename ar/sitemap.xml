@@ -7,12 +7,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.alienergy.eu.org/categories/"
+                href="https://www.alienergy.eu.org/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://www.alienergy.eu.org/zh-cn/categories/"
+                href="https://www.alienergy.eu.org/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -24,13 +24,8 @@
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://www.alienergy.eu.org/post/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="zh-cn"
-                href="https://www.alienergy.eu.org/zh-cn/post/"
+                href="https://www.alienergy.eu.org/post/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -43,12 +38,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.alienergy.eu.org/tags/"
+                href="https://www.alienergy.eu.org/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://www.alienergy.eu.org/zh-cn/tags/"
+                href="https://www.alienergy.eu.org/tags/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -69,7 +64,7 @@
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
+                hreflang="zh-cn"
                 href="https://www.alienergy.eu.org/p/placeholder-text/"
                 />
     <xhtml:link
@@ -83,12 +78,12 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.alienergy.eu.org/"
+                href="https://www.alienergy.eu.org/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://www.alienergy.eu.org/zh-cn/"
+                href="https://www.alienergy.eu.org/"
                 />
     <xhtml:link
                 rel="alternate"
