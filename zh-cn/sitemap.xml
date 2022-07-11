@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.alienergy.eu.org/</loc>
+    <loc>https://www.alienergy.eu.org/zh-cn/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.alienergy.eu.org/en/"
+                href="https://www.alienergy.eu.org/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -17,15 +17,15 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://www.alienergy.eu.org/"
+                href="https://www.alienergy.eu.org/zh-cn/"
                 />
   </url><url>
-    <loc>https://www.alienergy.eu.org/categories/</loc>
+    <loc>https://www.alienergy.eu.org/zh-cn/categories/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.alienergy.eu.org/en/categories/"
+                href="https://www.alienergy.eu.org/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -35,14 +35,19 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://www.alienergy.eu.org/categories/"
+                href="https://www.alienergy.eu.org/zh-cn/categories/"
                 />
   </url><url>
-    <loc>https://www.alienergy.eu.org/p/test-chinese/</loc>
+    <loc>https://www.alienergy.eu.org/zh-cn/p/test-chinese/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.alienergy.eu.org/post/</loc>
+    <loc>https://www.alienergy.eu.org/zh-cn/post/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.alienergy.eu.org/post/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
@@ -51,42 +56,42 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://www.alienergy.eu.org/post/"
+                href="https://www.alienergy.eu.org/zh-cn/post/"
                 />
   </url><url>
-    <loc>https://www.alienergy.eu.org/categories/test/</loc>
+    <loc>https://www.alienergy.eu.org/zh-cn/categories/test/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/categories/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/page/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/tags/css/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/tags/html/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/tags/markdown/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/p/markdown-syntax-guide/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/categories/syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/tags/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://www.alienergy.eu.org/en/tags/"
+                href="https://www.alienergy.eu.org/categories/test/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://www.alienergy.eu.org/zh-cn/categories/test/"
+                />
+  </url><url>
+    <loc>https://www.alienergy.eu.org/zh-cn/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.alienergy.eu.org/zh-cn/page/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.alienergy.eu.org/page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://www.alienergy.eu.org/zh-cn/page/"
+                />
+  </url><url>
+    <loc>https://www.alienergy.eu.org/zh-cn/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://www.alienergy.eu.org/tags/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -96,50 +101,19 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://www.alienergy.eu.org/tags/"
+                href="https://www.alienergy.eu.org/zh-cn/tags/"
                 />
   </url><url>
-    <loc>https://www.alienergy.eu.org/tags/themes/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/categories/themes/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/p/placeholder-text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+    <loc>https://www.alienergy.eu.org/zh-cn/%E5%85%B3%E4%BA%8E/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="ar"
-                href="https://www.alienergy.eu.org/ar/p/%D9%85%D8%AB%D8%A7%D9%84-%D9%86%D8%B5/"
+                hreflang="en"
+                href="https://www.alienergy.eu.org/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://www.alienergy.eu.org/p/placeholder-text/"
+                href="https://www.alienergy.eu.org/zh-cn/%E5%85%B3%E4%BA%8E/"
                 />
-  </url><url>
-    <loc>https://www.alienergy.eu.org/tags/tag-with-whitespaces/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/categories/test-with-whitespaces/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/tags/text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/p/math-typesetting/</loc>
-    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/tags/emoji/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/p/emoji-support/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/links/</loc>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/search/</loc>
-  </url><url>
-    <loc>https://www.alienergy.eu.org/%E5%85%B3%E4%BA%8E/</loc>
   </url>
 </urlset>
