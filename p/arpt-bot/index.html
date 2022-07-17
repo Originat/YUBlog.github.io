@@ -389,7 +389,8 @@
 <p>本文中提到的 client id 和client_secret（密钥），文中并没有说明怎样创建，请参考 <a class="link" href="https://johnrosen1.com/2021/02/14/onedrive/"  target="_blank" rel="noopener"
     >Aria2+Rclone+Onedrive实现全自动化下载</a> 和 <a class="link" href="https://www.jianshu.com/p/072ff75d35ca"  target="_blank" rel="noopener"
     >创建适用于Rclone的OneDrive Azure API</a></p>
-<h2 id="安装-docker">安装 Docker</h2>
+<h2 id="docker-使用">Docker 使用</h2>
+<h3 id="安装-docker">安装 Docker</h3>
 <p>国外机（推荐）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -399,13 +400,44 @@
 <pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">curl -sSL https://get.docker.com/ | sh
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>国内机(连接Telegram时，需要代理)</p>
+</div><p>国内机（连接 Telegram 时，需要代理）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">curl -sSL https://get.daocloud.io/docker | sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="启动-docker">启动 Docker</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">systemctl start docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="设置-docker-开机自启动">设置 Docker 开机自启动</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">systemctl enable docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="将普通用户添加到docker用户组">将普通用户添加到docker用户组</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">groupadd docker
+</span></span><span class="line"><span class="cl">gpasswd -a ashin docker
+</span></span><span class="line"><span class="cl">systemctl restart docker
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="配置-telegram_bot">配置 Telegram_Bot</h2>
@@ -976,7 +1008,14 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#安装-docker">安装 Docker</a></li>
+    <li><a href="#docker-使用">Docker 使用</a>
+      <ol>
+        <li><a href="#安装-docker">安装 Docker</a></li>
+        <li><a href="#启动-docker">启动 Docker</a></li>
+        <li><a href="#设置-docker-开机自启动">设置 Docker 开机自启动</a></li>
+        <li><a href="#将普通用户添加到docker用户组">将普通用户添加到docker用户组</a></li>
+      </ol>
+    </li>
     <li><a href="#配置-telegram_bot">配置 Telegram_Bot</a></li>
     <li><a href="#安装-arpt-bot">安装 ARPT-Bot</a></li>
     <li><a href="#配置-rclone">配置 rclone</a>
