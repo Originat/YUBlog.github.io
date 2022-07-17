@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Aria2&#43;Rclone&#43;Onedrive&#43;Telegram_Bot实现全自动化下载'><title>ARPT-Bot 搭建</title>
+
+<link rel='canonical' href='https://www.alienergy.eu.org/p/arpt-bot/'>
+
+<link rel="stylesheet" href="/scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css"><meta property='og:title' content='ARPT-Bot 搭建'>
+<meta property='og:description' content='Aria2&#43;Rclone&#43;Onedrive&#43;Telegram_Bot实现全自动化下载'>
+<meta property='og:url' content='https://www.alienergy.eu.org/p/arpt-bot/'>
+<meta property='og:site_name' content='静语忆昔'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-07-18T00:20:00&#43;08:00'/><meta property='article:modified_time' content='2022-07-18T00:20:00&#43;08:00'/><meta property='og:image' content='https://github-readme-stats.vercel.app/api/pin/?username=666wcy&repo=ARPT-Bot' />
+<meta name="twitter:title" content="ARPT-Bot 搭建">
+<meta name="twitter:description" content="Aria2&#43;Rclone&#43;Onedrive&#43;Telegram_Bot实现全自动化下载"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://github-readme-stats.vercel.app/api/pin/?username=666wcy&repo=ARPT-Bot' /><script async defer data-website-id="b4c53d76-ec3f-4534-9481-f3d1b73bf451" src="https://umami-seven-plum.vercel.app/yublog.js"></script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu4a238b00d16536406b397de2704cf9f7_100493_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">静语忆昔</a></h1>
+            <h2 class="site-description">你比想象の，更有力量!</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Originat'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.alienergy.eu.org/index.xml'
+                        target="_blank"
+                        title="Rss"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://t.me/everynightreading'
+                        target="_blank"
+                        title="Telegram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/arpt-bot/">
+                
+                    <img src="https://github-readme-stats.vercel.app/api/pin/?username=666wcy&amp;repo=ARPT-Bot" loading="lazy" alt="Featured image of post ARPT-Bot 搭建" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/aria2/" >
+                Aria2
+            </a>
+        
+            <a href="/categories/rclone/" >
+                Rclone
+            </a>
+        
+            <a href="/categories/onedrive/" >
+                Onedrive
+            </a>
+        
+            <a href="/categories/telegram_bot/" >
+                Telegram_Bot
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/arpt-bot/">ARPT-Bot 搭建</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Aria2&#43;Rclone&#43;Onedrive&#43;Telegram_Bot实现全自动化下载
+        </h3>
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 18, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><a class="link" href="https://github.com/linuxserver/docker-qbittorrent"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/github/stars/666wcy/ARPT-Bot.svg?color=inactived&amp;labelColor=555555&amp;logoColor=ffffff&amp;style=for-the-badge&amp;logo=github"
+	
+	
+	
+	loading="lazy"
+	
+		alt="GitHub Stars"
+	
+	
+></a> <a class="link" href="https://hub.docker.com/repository/docker/benchao/arpt"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/docker/pulls/benchao/arpt.svg?color=inactived&amp;labelColor=555555&amp;logoColor=ffffff&amp;style=for-the-badge&amp;label=pulls&amp;logo=docker"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Docker Pulls"
+	
+	
+></a> <a class="link" href="https://github.com/linuxserver/docker-qbittorrent/releases"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/docker/v/benchao/arpt?color=inactived&amp;labelColor=555555&amp;logoColor=ffffff&amp;style=for-the-badge&amp;label=%e6%9c%80%e6%96%b0%e7%89%88%e6%9c%ac&amp;logo=docker"
+	
+	
+	
+	loading="lazy"
+	
+		alt="GitHub Release"
+	
+	
+></a></p>
+<blockquote>
+<p><a class="link" href="https://github.com/666wcy/ARPT-Bot"  target="_blank" rel="noopener"
+    ><code>ARPT-Bot</code></a>：一个基于Python3的Bot。目前支持以Docker的方式部署在vps上。支持Aria2、本子下载、网易云音乐下载、Pixiv榜单下载、Youtue-dl支持、搜图。</p>
+</blockquote>
+<p>本文并中提到的 client id 和client_secret（密钥），本文并没有说明怎样创建，请参考 <a class="link" href="https://johnrosen1.com/2021/02/14/onedrive/"  target="_blank" rel="noopener"
+    >Aria2+Rclone+Onedrive实现全自动化下载</a> 和 <a class="link" href="https://www.jianshu.com/p/072ff75d35ca"  target="_blank" rel="noopener"
+    >创建适用于Rclone的OneDrive Azure API</a></p>
+<h2 id="安装-docker">安装 Docker</h2>
+<p>国外机（推荐）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">curl -sSL https://get.docker.com/ | sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>国内机(连接Telegram时，需要代理)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">curl -sSL https://get.daocloud.io/docker | sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="配置-telegram_bot">配置 Telegram_Bot</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">start - 查看Bot状态
+</span></span><span class="line"><span class="cl">help - 获取Bot的使用帮助
+</span></span><span class="line"><span class="cl">pixivauthor - 对pixiv画师作品操作
+</span></span><span class="line"><span class="cl">pixivtopall - 对pixiv排行榜进行操作
+</span></span><span class="line"><span class="cl">pixivtopillust - 对插画排行榜进行操作
+</span></span><span class="line"><span class="cl">pixivpid - 发送pixiv该id的图片
+</span></span><span class="line"><span class="cl">magfile - 推送种子文件至aria2下载后上传至网盘
+</span></span><span class="line"><span class="cl">mirror - 推送直链至aria2下载上传至网盘
+</span></span><span class="line"><span class="cl">mirrortg - 推送直链至aria2下载发送到TG
+</span></span><span class="line"><span class="cl">magnet - 推送磁力链接至aria2下载后上传至网盘
+</span></span><span class="line"><span class="cl">downtgfile - 发送TG文件并上传至网盘
+</span></span><span class="line"><span class="cl">rclonecopy - 用rclone在网盘间传输
+</span></span><span class="line"><span class="cl">rclonelsd - 用rclone显示网盘文件夹
+</span></span><span class="line"><span class="cl">rclone - 用rclone显示文件夹内详细信息
+</span></span><span class="line"><span class="cl">rclonecopyurl - 用rclonecopyurl的方式直接上传直链文件
+</span></span><span class="line"><span class="cl">getfileid - 发送文件获取fileid
+</span></span><span class="line"><span class="cl">getfile - 发送fileid来获取文件
+</span></span><span class="line"><span class="cl">video - 发送视频链接
+</span></span><span class="line"><span class="cl">neteaseid - 通过id获取歌曲信息
+</span></span><span class="line"><span class="cl">searchsong - 搜索网易云音乐歌曲
+</span></span><span class="line"><span class="cl">playlist - 获取歌单信息
+</span></span><span class="line"><span class="cl">odshare - 下载公开的od、sp分享链接文件并上传网盘
+</span></span><span class="line"><span class="cl">odprivate - 下载域内的od、sp分享链接上传到网盘
+</span></span><span class="line"><span class="cl">nhentai - 下载nhentai中对应id的本子
+</span></span><span class="line"><span class="cl">ehentai - 下载nhentai中对应id的本子
+</span></span><span class="line"><span class="cl">picacgsearch - 在哔咔中搜索本子，支持ZIP上传到网盘和发送到TG
+</span></span><span class="line"><span class="cl">ehentaisearch - 在ehentai中搜索本子，支持ZIP上传到网盘和发送到TG、发送网页
+</span></span><span class="line"><span class="cl">nhentaisearch - 在nhentai中搜索本子，支持ZIP上传到网盘和发送到TG、发送网页
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装-arpt-bot">安装 ARPT-Bot</h2>
+<p>Docker 部署命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker run -d \
+</span></span><span class="line"><span class="cl">    --name arpt \
+</span></span><span class="line"><span class="cl">    -e Api_hash=xxx \
+</span></span><span class="line"><span class="cl">    -e Api_id=xxx \
+</span></span><span class="line"><span class="cl">    -e Aria2_secret=xxx \
+</span></span><span class="line"><span class="cl">    -e Remote=yun \
+</span></span><span class="line"><span class="cl">    -e Telegram_bot_api=xxx \
+</span></span><span class="line"><span class="cl">    -e Telegram_user_id=xxx \
+</span></span><span class="line"><span class="cl">    -e Upload=xxx \
+</span></span><span class="line"><span class="cl">    -e Rclone_share=False \
+</span></span><span class="line"><span class="cl">    -e Error_user_info=&#34;你没有使用权限&#34; \
+</span></span><span class="line"><span class="cl">    -p 8868:8868 \
+</span></span><span class="line"><span class="cl">   benchao/arpt:v2.1.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置解释：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Api_hash Api_id 这两项在https://my.telegram.org中注册应用后得到
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Aria2_secret    Aria2的密匙 （最好设置为字母大小写）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Telegram_bot_api    Bot的API，在@BotFather申请获得
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Telegram_user_id    使用者的TG id（个人使用），可在@userinfobot处获得，设置为群组ID则该群组所有人员可用（多人使用），需要设置Bot的群组权限
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Remote  上传目的地的rclone盘符 （安装rclone后，在手动运行 rclone config 时起的名字时需一致）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Upload  上传文件夹名称，后面不需要加/ (需要上传到网盘的文件夹名称)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Rclone_share 可不填，True 为上传网盘后返回分享链接(onedrive)，False 为关闭该功能，不设置该变量则默认关闭
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Error_user_info 可不填，可设置非允许使用者发送消息时的提示，不设置该变量则使用默认语句
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后去tg试试你的机器人能不能说话，再继续。</p>
+<h2 id="配置-rclone">配置 rclone</h2>
+<p>我们先在windows上配置一下</p>
+<p>下载Windows对应位数的压缩包，网址：<a class="link" href="https://rclone.org/downloads/"  target="_blank" rel="noopener"
+    >https://rclone.org/downloads/</a></p>
+<p>先解压到D:\rclone (临时使用)</p>
+<p>管理员命令提示符（Cmd/PowerShell）输入下面的命令，回车</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd D:\rclone
+</span></span><span class="line"><span class="cl">.\rclone authorize &#34;onedrive&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Window10 需要在命令前，加<code>.\</code>，Window7 则不需要。</p>
+<p>这时会自动打开浏览器让你登录你的Onedrive账户</p>
+<p>点击授权后，浏览器提醒你返回，回到cmd中，发现多了一大串字符。复制花括号里的所有字符(如图)，新建一个文档保存，一会要用。
+<img src="/p/arpt-bot/rclone_1.webp"
+	width="1004"
+	height="397"
+	srcset="/p/arpt-bot/rclone_1_hu069d7f01eaff17099bea5ad74291748a_76408_480x0_resize_q75_h2_box_2.webp 480w, /p/arpt-bot/rclone_1_hu069d7f01eaff17099bea5ad74291748a_76408_1024x0_resize_q75_h2_box_2.webp 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="252"
+		data-flex-basis="606px"
+	
+></p>
+<h3 id="进入-docker">进入 Docker</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">docker ps  
+</span></span><span class="line"><span class="cl">docker exec -it 775c7c9ee1e1 /bin/bash  <span class="ni">#把</span> 775c7c9ee1e1 改成你的id，在vps上执行 docker ps 查看
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>在 Docker 中输入 rclone config</li>
+<li>输入n创建新配置，配置名称随意，【如：yun（-e Remote=yun \ 中的需一致）】建议从简，否则后边输命令的时候你会后悔~</li>
+<li>输入27，即【Microsoft OneDrive】</li>
+<li>输入client id 和密钥，然后会问你【是否编辑高级设置】、【是否使用自动设置】，全部选n即可</li>
+<li>最后会给出一条命令，需要在你自己的电脑cmd中，执行此命令，然后把结果粘贴过来</li>
+</ol>
+<p>参考图示如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">输入 rclone config
+</span></span><span class="line"><span class="cl">输入 n
+</span></span><span class="line"><span class="cl">输入 yun  （-e Remote=yun \ 中的需一致）
+</span></span><span class="line"><span class="cl">找到 OneDrive    （一般是 27 / Microsoft OneDrive\ &#34;onedrive&#34;)
+</span></span><span class="line"><span class="cl">Storage&gt; 27
+</span></span><span class="line"><span class="cl">Option client_id.
+</span></span><span class="line"><span class="cl">OAuth Client Id.
+</span></span><span class="line"><span class="cl">Leave blank normally.
+</span></span><span class="line"><span class="cl">Enter a string value. Press Enter for the default (&#34;&#34;).
+</span></span><span class="line"><span class="cl">client_id&gt;回车   (输入client_id)
+</span></span><span class="line"><span class="cl">Option client_secret.
+</span></span><span class="line"><span class="cl">OAuth Client Secret.
+</span></span><span class="line"><span class="cl">Leave blank normally.
+</span></span><span class="line"><span class="cl">Enter a string value. Press Enter for the default (&#34;&#34;).
+</span></span><span class="line"><span class="cl">client_secret&gt;回车   (输入client_secret)
+</span></span><span class="line"><span class="cl">Option region.
+</span></span><span class="line"><span class="cl">Choose national cloud region for OneDrive.
+</span></span><span class="line"><span class="cl">Enter a string value. Press Enter for the default (&#34;global&#34;).
+</span></span><span class="line"><span class="cl">Choose a number from below, or type in your own value.
+</span></span><span class="line"><span class="cl">1 / Microsoft Cloud Global
+</span></span><span class="line"><span class="cl">   \ &#34;global&#34;
+</span></span><span class="line"><span class="cl">2 / Microsoft Cloud for US <span class="ge">**</span>
+</span></span><span class="line"><span class="cl">   \ &#34;us&#34;
+</span></span><span class="line"><span class="cl">3 / Microsoft Cloud Germany
+</span></span><span class="line"><span class="cl">   \ &#34;de&#34;
+</span></span><span class="line"><span class="cl">4 / Azure and Office 365 operated by 21Vianet in China
+</span></span><span class="line"><span class="cl">   \ &#34;cn&#34;
+</span></span><span class="line"><span class="cl">region&gt;1 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/arpt-bot/rclone_2.webp"
+	width="858"
+	height="410"
+	srcset="/p/arpt-bot/rclone_2_hua34db33ff35ebc586653f88bc17c57ba_48056_480x0_resize_q75_h2_box_2.webp 480w, /p/arpt-bot/rclone_2_hua34db33ff35ebc586653f88bc17c57ba_48056_1024x0_resize_q75_h2_box_2.webp 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="209"
+		data-flex-basis="502px"
+	
+></p>
+<p><img src="/p/arpt-bot/rclone_3.png"
+	width="1374"
+	height="303"
+	srcset="/p/arpt-bot/rclone_3_hu7e1f0a6d48a6b11870b6056c1cbf2c01_19933_480x0_resize_box_3.png 480w, /p/arpt-bot/rclone_3_hu7e1f0a6d48a6b11870b6056c1cbf2c01_19933_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="453"
+		data-flex-basis="1088px"
+	
+></p>
+<p>把之前复制花括号里的所有字符粘贴到这里</p>
+<p><img src="/p/arpt-bot/rclone_4.png"
+	width="1655"
+	height="354"
+	srcset="/p/arpt-bot/rclone_4_huc04d38634764f1c14d1feda41d31e75a_12456_480x0_resize_box_3.png 480w, /p/arpt-bot/rclone_4_huc04d38634764f1c14d1feda41d31e75a_12456_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="467"
+		data-flex-basis="1122px"
+	
+></p>
+<h2 id="退出-docker">退出 Docker</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">Ctrl + D
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接着就可以去tg上面玩机器人了</p>
+<h2 id="参考">参考</h2>
+<ol>
+<li>
+<p><a class="link" href="https://johnrosen1.com/2021/02/14/onedrive/"  target="_blank" rel="noopener"
+    >Aria2+Rclone+Onedrive实现全自动化下载</a></p>
+</li>
+<li>
+<p><a class="link" href="https://www.jianshu.com/p/072ff75d35ca"  target="_blank" rel="noopener"
+    >创建适用于Rclone的OneDrive Azure API</a></p>
+</li>
+<li>
+<p><a class="link" href="https://ruxi.org/k/147.html"  target="_blank" rel="noopener"
+    >ARPT-Bot 搭建 支持各种资源下载 上传到各种网盘 OneDrive</a></p>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div id="cusdis_thread"
+  data-host="https://cusdis-e95vfq1tq-originat.vercel.app"
+  data-app-id="35a74cb5-fde6-4262-b49b-fdf72264bfcd"
+  data-page-id="0f7350113ad048f1c741ca9cf2c108d1"
+  data-page-url="https://www.alienergy.eu.org/p/arpt-bot/"
+  data-page-title="ARPT-Bot 搭建"
+></div>
+<script defer src="https://cusdis-e95vfq1tq-originat.vercel.app/js/widget/lang/zh-cn.js"></script>
+<script async defer src="https://cusdis-e95vfq1tq-originat.vercel.app/js/cusdis.es.js"></script>
+
+
+<script>
+    function setCusdisTheme(theme) {
+        let cusdis = document.querySelector('#cusdis_thread iframe');
+        if (cusdis) {
+            window.CUSDIS.setTheme(theme)
+        }
+    }
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        setCusdisTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 静语忆昔
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.12.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+
+    
+    <section class="powerby"> 
+        
+        
+        
+            
+            <span id="sitetime"></span><span id="sitetime" style="color: #b89c72;"></span>
+            <script language=javascript>
+                function siteTime(){
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth()+1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    
+
+                    var t1 = Date.UTC(2022,7,11,02,30,0); 
+                    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                    var diff = t2-t1;
+                    var diffYears = Math.floor(diff/years);
+                    var diffDays = Math.floor((diff/days)-diffYears*365);
+                    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+                    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+                    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+                    document.getElementById("sitetime").innerHTML=diffYears+" 年 "+diffDays+" 天 "+diffHours+" 时 "+diffMinutes+" 分 "+diffSeconds+" 秒";
+                }
+                siteTime();
+            </script>
+            <style>
+                #sitetime {
+                    animation: change 50s infinite;
+                    font-weight: 800;
+                }
+            
+                @keyframes change {
+                    0% {
+                        color: #85bfe5;
+                    }
+            
+                    25% {
+                        color: #a08c8c;
+                    }
+            
+                    50% {
+                        color: #746c50;
+                    }
+            
+                    75% {
+                        color: #ddc2ee;
+                    }
+            
+                    100% {
+                        color: #8c98a2;
+                    }
+                }
+            </style>
+        
+        
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#安装-docker">安装 Docker</a></li>
+    <li><a href="#配置-telegram_bot">配置 Telegram_Bot</a></li>
+    <li><a href="#安装-arpt-bot">安装 ARPT-Bot</a></li>
+    <li><a href="#配置-rclone">配置 rclone</a>
+      <ol>
+        <li><a href="#进入-docker">进入 Docker</a></li>
+      </ol>
+    </li>
+    <li><a href="#退出-docker">退出 Docker</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

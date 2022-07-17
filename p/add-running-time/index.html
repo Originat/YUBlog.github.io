@@ -357,6 +357,8 @@
 </li>
 <li>
 <p>在文件中添加</p>
+</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -435,85 +437,83 @@
 </span><span class="lnt">74
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- 新增如下，class=&#34;powerby&#34;为主题样式，可删除 --&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- &lt;section class=&#34;powerby&#34;&gt;  --&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- 网站运行计时统计 start--&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- 删除以下注释，可强制居中：center --&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- &lt;center&gt; --&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- 本站已勉强运行： --&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;sitetime&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;sitetime&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color: </span><span class="ni">#b89c72</span><span class="s">;&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">javascript</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="kd">function</span> <span class="nx">siteTime</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">          <span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="s2">&#34;siteTime()&#34;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">seconds</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="nx">seconds</span> <span class="o">*</span> <span class="mi">60</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">hours</span> <span class="o">=</span> <span class="nx">minutes</span> <span class="o">*</span> <span class="mi">60</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">days</span> <span class="o">=</span> <span class="nx">hours</span> <span class="o">*</span> <span class="mi">24</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">years</span> <span class="o">=</span> <span class="nx">days</span> <span class="o">*</span> <span class="mi">365</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">todayYear</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">todayMonth</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">todayDate</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">todayHour</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">todayMinute</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">todaySecond</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">          <span class="cm">/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
-</span></span></span><span class="line"><span class="cl"><span class="cm">          year - 作为date对象的年份，为4位年份值
-</span></span></span><span class="line"><span class="cl"><span class="cm">          month - 0-11之间的整数，做为date对象的月份
-</span></span></span><span class="line"><span class="cl"><span class="cm">          day - 1-31之间的整数，做为date对象的天数
-</span></span></span><span class="line"><span class="cl"><span class="cm">          hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-</span></span></span><span class="line"><span class="cl"><span class="cm">          minutes - 0-59之间的整数，做为date对象的分钟数
-</span></span></span><span class="line"><span class="cl"><span class="cm">          seconds - 0-59之间的整数，做为date对象的秒数
-</span></span></span><span class="line"><span class="cl"><span class="cm">          microseconds - 0-999之间的整数，做为date对象的毫秒数 */</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">t1</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">02</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> <span class="c1">//北京时间2016-12-1 00:00:00
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="kd">var</span> <span class="nx">t2</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="nx">todayYear</span><span class="p">,</span><span class="nx">todayMonth</span><span class="p">,</span><span class="nx">todayDate</span><span class="p">,</span><span class="nx">todayHour</span><span class="p">,</span><span class="nx">todayMinute</span><span class="p">,</span><span class="nx">todaySecond</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">diff</span> <span class="o">=</span> <span class="nx">t2</span><span class="o">-</span><span class="nx">t1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">diffYears</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">diff</span><span class="o">/</span><span class="nx">years</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">diffDays</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">diff</span><span class="o">/</span><span class="nx">days</span><span class="p">)</span><span class="o">-</span><span class="nx">diffYears</span><span class="o">*</span><span class="mi">365</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">diffHours</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">diff</span><span class="o">-</span><span class="p">(</span><span class="nx">diffYears</span><span class="o">*</span><span class="mi">365</span><span class="o">+</span><span class="nx">diffDays</span><span class="p">)</span><span class="o">*</span><span class="nx">days</span><span class="p">)</span><span class="o">/</span><span class="nx">hours</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">diffMinutes</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">diff</span><span class="o">-</span><span class="p">(</span><span class="nx">diffYears</span><span class="o">*</span><span class="mi">365</span><span class="o">+</span><span class="nx">diffDays</span><span class="p">)</span><span class="o">*</span><span class="nx">days</span><span class="o">-</span><span class="nx">diffHours</span><span class="o">*</span><span class="nx">hours</span><span class="p">)</span><span class="o">/</span><span class="nx">minutes</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">          <span class="kd">var</span> <span class="nx">diffSeconds</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">diff</span><span class="o">-</span><span class="p">(</span><span class="nx">diffYears</span><span class="o">*</span><span class="mi">365</span><span class="o">+</span><span class="nx">diffDays</span><span class="p">)</span><span class="o">*</span><span class="nx">days</span><span class="o">-</span><span class="nx">diffHours</span><span class="o">*</span><span class="nx">hours</span><span class="o">-</span><span class="nx">diffMinutes</span><span class="o">*</span><span class="nx">minutes</span><span class="p">)</span><span class="o">/</span><span class="nx">seconds</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;sitetime&#34;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">diffYears</span><span class="o">+</span><span class="s2">&#34; 年 &#34;</span><span class="o">+</span><span class="nx">diffDays</span><span class="o">+</span><span class="s2">&#34; 天 &#34;</span><span class="o">+</span><span class="nx">diffHours</span><span class="o">+</span><span class="s2">&#34; 时 &#34;</span><span class="o">+</span><span class="nx">diffMinutes</span><span class="o">+</span><span class="s2">&#34; 分 &#34;</span><span class="o">+</span><span class="nx">diffSeconds</span><span class="o">+</span><span class="s2">&#34; 秒&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">siteTime</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      <span class="ni">#sitetime</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">          <span class="k">animation</span><span class="p">:</span> <span class="n">change</span> <span class="mi">50</span><span class="kt">s</span> <span class="kc">infinite</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="k">font-weight</span><span class="p">:</span> <span class="mi">800</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      <span class="ni">@keyframes</span> <span class="nt">change</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">          <span class="err">0%</span> <span class="err">{</span>
-</span></span><span class="line"><span class="cl">              <span class="k">color</span><span class="p">:</span> <span class="ni">#85bfe5</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">          <span class="nt">25</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">              <span class="k">color</span><span class="p">:</span> <span class="ni">#a08c8c</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">          <span class="nt">50</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">              <span class="k">color</span><span class="p">:</span> <span class="ni">#746c50</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">          <span class="nt">75</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">              <span class="k">color</span><span class="p">:</span> <span class="ni">#ddc2ee</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">          <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">              <span class="k">color</span><span class="p">:</span> <span class="ni">#8c98a2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">          <span class="p">}</span>
-</span></span><span class="line"><span class="cl">      <span class="err">}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- &lt;/center&gt; --&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- 网站运行计时统计 over--&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- &lt;/section&gt; --&gt;</span> 
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">    <span class="c">&lt;!-- 新增如下，class=&#34;powerby&#34;为主题样式，可删除 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- &lt;section class=&#34;powerby&#34;&gt;  --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 网站运行计时统计 start--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 删除以下注释，可强制居中：center --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- &lt;center&gt; --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 本站已勉强运行： --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;sitetime&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;sitetime&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color: </span><span class="ni">#b89c72</span><span class="s">;&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">javascript</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">function</span> <span class="nx">siteTime</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="s2">&#34;siteTime()&#34;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">seconds</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="nx">seconds</span> <span class="o">*</span> <span class="mi">60</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">hours</span> <span class="o">=</span> <span class="nx">minutes</span> <span class="o">*</span> <span class="mi">60</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">days</span> <span class="o">=</span> <span class="nx">hours</span> <span class="o">*</span> <span class="mi">24</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">years</span> <span class="o">=</span> <span class="nx">days</span> <span class="o">*</span> <span class="mi">365</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">todayYear</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">todayMonth</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">todayDate</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">todayHour</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getHours</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">todayMinute</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">todaySecond</span> <span class="o">=</span> <span class="nx">today</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+</span></span></span><span class="line"><span class="cl"><span class="cm">            year - 作为date对象的年份，为4位年份值
+</span></span></span><span class="line"><span class="cl"><span class="cm">            month - 0-11之间的整数，做为date对象的月份
+</span></span></span><span class="line"><span class="cl"><span class="cm">            day - 1-31之间的整数，做为date对象的天数
+</span></span></span><span class="line"><span class="cl"><span class="cm">            hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+</span></span></span><span class="line"><span class="cl"><span class="cm">            minutes - 0-59之间的整数，做为date对象的分钟数
+</span></span></span><span class="line"><span class="cl"><span class="cm">            seconds - 0-59之间的整数，做为date对象的秒数
+</span></span></span><span class="line"><span class="cl"><span class="cm">            microseconds - 0-999之间的整数，做为date对象的毫秒数 */</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">t1</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">02</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> <span class="c1">//北京时间2016-12-1 00:00:00
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kd">var</span> <span class="nx">t2</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="nx">todayYear</span><span class="p">,</span><span class="nx">todayMonth</span><span class="p">,</span><span class="nx">todayDate</span><span class="p">,</span><span class="nx">todayHour</span><span class="p">,</span><span class="nx">todayMinute</span><span class="p">,</span><span class="nx">todaySecond</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">diff</span> <span class="o">=</span> <span class="nx">t2</span><span class="o">-</span><span class="nx">t1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">diffYears</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">diff</span><span class="o">/</span><span class="nx">years</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">diffDays</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">diff</span><span class="o">/</span><span class="nx">days</span><span class="p">)</span><span class="o">-</span><span class="nx">diffYears</span><span class="o">*</span><span class="mi">365</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">diffHours</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">diff</span><span class="o">-</span><span class="p">(</span><span class="nx">diffYears</span><span class="o">*</span><span class="mi">365</span><span class="o">+</span><span class="nx">diffDays</span><span class="p">)</span><span class="o">*</span><span class="nx">days</span><span class="p">)</span><span class="o">/</span><span class="nx">hours</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">diffMinutes</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">diff</span><span class="o">-</span><span class="p">(</span><span class="nx">diffYears</span><span class="o">*</span><span class="mi">365</span><span class="o">+</span><span class="nx">diffDays</span><span class="p">)</span><span class="o">*</span><span class="nx">days</span><span class="o">-</span><span class="nx">diffHours</span><span class="o">*</span><span class="nx">hours</span><span class="p">)</span><span class="o">/</span><span class="nx">minutes</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">diffSeconds</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">diff</span><span class="o">-</span><span class="p">(</span><span class="nx">diffYears</span><span class="o">*</span><span class="mi">365</span><span class="o">+</span><span class="nx">diffDays</span><span class="p">)</span><span class="o">*</span><span class="nx">days</span><span class="o">-</span><span class="nx">diffHours</span><span class="o">*</span><span class="nx">hours</span><span class="o">-</span><span class="nx">diffMinutes</span><span class="o">*</span><span class="nx">minutes</span><span class="p">)</span><span class="o">/</span><span class="nx">seconds</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;sitetime&#34;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">=</span><span class="nx">diffYears</span><span class="o">+</span><span class="s2">&#34; 年 &#34;</span><span class="o">+</span><span class="nx">diffDays</span><span class="o">+</span><span class="s2">&#34; 天 &#34;</span><span class="o">+</span><span class="nx">diffHours</span><span class="o">+</span><span class="s2">&#34; 时 &#34;</span><span class="o">+</span><span class="nx">diffMinutes</span><span class="o">+</span><span class="s2">&#34; 分 &#34;</span><span class="o">+</span><span class="nx">diffSeconds</span><span class="o">+</span><span class="s2">&#34; 秒&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">siteTime</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="ni">#sitetime</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">animation</span><span class="p">:</span> <span class="n">change</span> <span class="mi">50</span><span class="kt">s</span> <span class="kc">infinite</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-weight</span><span class="p">:</span> <span class="mi">800</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="ni">@keyframes</span> <span class="nt">change</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="err">0%</span> <span class="err">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">color</span><span class="p">:</span> <span class="ni">#85bfe5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="nt">25</span><span class="o">%</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">color</span><span class="p">:</span> <span class="ni">#a08c8c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="nt">50</span><span class="o">%</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">color</span><span class="p">:</span> <span class="ni">#746c50</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="nt">75</span><span class="o">%</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">color</span><span class="p">:</span> <span class="ni">#ddc2ee</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">            <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">color</span><span class="p">:</span> <span class="ni">#8c98a2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="err">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- &lt;/center&gt; --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 网站运行计时统计 over--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- &lt;/section&gt; --&gt;</span> 
+</span></span><span class="line"><span class="cl">    
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-<h3 id="参考">参考</h3>
+</div><h3 id="参考">参考</h3>
 <ol>
 <li>
 <p><a class="link" href="https://blog.csdn.net/qq_39500821/article/details/115673924"  target="_blank" rel="noopener"
