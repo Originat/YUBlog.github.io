@@ -266,6 +266,32 @@
             <div class="article-list--tile">
                 
                     
+<article class="">
+    <a href="/categories/%E6%97%B6%E9%97%B4%E7%BB%9F%E8%AE%A1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">时间统计</h2>
+        </div>
+    </a>
+</article>
+
+                
+                    
+<article class="">
+    <a href="/categories/%E7%BD%91%E9%A1%B5%E9%A1%B5%E5%B0%BE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网页页尾</h2>
+        </div>
+    </a>
+</article>
+
+                
+                    
 <article class="has-image">
     <a href="/categories/%E9%9A%8F%E6%89%8B%E6%97%A5%E8%AE%B0/">
         
@@ -418,6 +444,26 @@
     <div class="archives-group" id="2022">
         <h2 class="archives-date section-title"><a href="/archives/#2022">2022</a></h2>
         <div class="article-list--compact">
+            
+                <article>
+    <a href="/p/add-running-time/">
+        <div class="article-details">
+            <h2 class="article-title">网站底部运行时间统计</h2>
+            <footer class="article-time">
+                <time datetime='2022-07-17T20:00:00&#43;08:00'>Jul 17, 2022</time>
+            </footer>
+        </div>
+            <div class="article-image">
+                <img src="/p/add-running-time/add-running-time_hu68f6f581fb37e9e00f02979bb55ef386_905636_120x120_fill_box_smart1_3.png" 
+                        width="120"
+                        height="120" 
+                        alt="网站底部运行时间统计"
+                        loading="lazy">
+                
+            </div>
+        
+    </a>
+</article>
             
                 <article>
     <a href="/p/20220713/">
@@ -584,6 +630,73 @@
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.12.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+
+    
+    <section class="powerby"> 
+        
+        
+            
+            <span id="momk"></span><span id="momk" style="color: #b89c72;"></span>
+            <script language=javascript>
+                function siteTime(){
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth()+1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    
+
+                    var t1 = Date.UTC(2022,7,11,02,30,0); 
+                    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                    var diff = t2-t1;
+                    var diffYears = Math.floor(diff/years);
+                    var diffDays = Math.floor((diff/days)-diffYears*365);
+                    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+                    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+                    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+                    document.getElementById("momk").innerHTML=diffYears+" 年 "+diffDays+" 天 "+diffHours+" 时 "+diffMinutes+" 分 "+diffSeconds+" 秒";
+                }
+                siteTime();
+            </script>
+            <style>
+                #momk {
+                    animation: change 50s infinite;
+                    font-weight: 800;
+                }
+            
+                @keyframes change {
+                    0% {
+                        color: #85bfe5;
+                    }
+            
+                    25% {
+                        color: #a08c8c;
+                    }
+            
+                    50% {
+                        color: #746c50;
+                    }
+            
+                    75% {
+                        color: #ddc2ee;
+                    }
+            
+                    100% {
+                        color: #8c98a2;
+                    }
+                }
+            </style>
+        
+        
     </section>
 </footer>
 
