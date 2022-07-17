@@ -538,8 +538,9 @@
     <section class="powerby"> 
         
         
+        
             
-            <span id="momk"></span><span id="momk" style="color: #b89c72;"></span>
+            <span id="sitetime"></span><span id="sitetime" style="color: #b89c72;"></span>
             <script language=javascript>
                 function siteTime(){
                     window.setTimeout("siteTime()", 1000);
@@ -565,12 +566,12 @@
                     var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
                     var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
                     var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-                    document.getElementById("momk").innerHTML=diffYears+" 年 "+diffDays+" 天 "+diffHours+" 时 "+diffMinutes+" 分 "+diffSeconds+" 秒";
+                    document.getElementById("sitetime").innerHTML=diffYears+" 年 "+diffDays+" 天 "+diffHours+" 时 "+diffMinutes+" 分 "+diffSeconds+" 秒";
                 }
                 siteTime();
             </script>
             <style>
-                #momk {
+                #sitetime {
                     animation: change 50s infinite;
                     font-weight: 800;
                 }
