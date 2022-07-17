@@ -386,7 +386,7 @@
 <p><a class="link" href="https://github.com/666wcy/ARPT-Bot"  target="_blank" rel="noopener"
     ><code>ARPT-Bot</code></a>：一个基于Python3的Bot。目前支持以Docker的方式部署在vps上。支持Aria2、本子下载、网易云音乐下载、Pixiv榜单下载、Youtue-dl支持、搜图。</p>
 </blockquote>
-<p>本文并中提到的 client id 和client_secret（密钥），本文并没有说明怎样创建，请参考 <a class="link" href="https://johnrosen1.com/2021/02/14/onedrive/"  target="_blank" rel="noopener"
+<p>本文中提到的 client id 和client_secret（密钥），文中并没有说明怎样创建，请参考 <a class="link" href="https://johnrosen1.com/2021/02/14/onedrive/"  target="_blank" rel="noopener"
     >Aria2+Rclone+Onedrive实现全自动化下载</a> 和 <a class="link" href="https://www.jianshu.com/p/072ff75d35ca"  target="_blank" rel="noopener"
     >创建适用于Rclone的OneDrive Azure API</a></p>
 <h2 id="安装-docker">安装 Docker</h2>
@@ -700,7 +700,7 @@
 		data-flex-basis="1122px"
 	
 ></p>
-<h2 id="退出-docker">退出 Docker</h2>
+<h3 id="退出-docker">退出 Docker</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -710,6 +710,9 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>接着就可以去tg上面玩机器人了</p>
+<h2 id="测试下载文件">测试下载文件</h2>
+<p><a class="link" href="https://releases.ubuntu.com/20.04/ubuntu-20.04.4-desktop-amd64.iso.torrent"  target="_blank" rel="noopener"
+    >Ubuntu 20.04.4 Desktop (64-bit)</a></p>
 <h2 id="参考">参考</h2>
 <ol>
 <li>
@@ -723,6 +726,10 @@
 <li>
 <p><a class="link" href="https://ruxi.org/k/147.html"  target="_blank" rel="noopener"
     >ARPT-Bot 搭建 支持各种资源下载 上传到各种网盘 OneDrive</a></p>
+</li>
+<li>
+<p><a class="link" href="https://p3terx.com/archives/linux-vps-uses-rclone-to-mount-network-drives-such-as-onedrive-and-google-drive.html"  target="_blank" rel="noopener"
+    >Rclone 使用教程 - 挂载 OneDrive、Google Drive 等网盘(Linux)</a></p>
 </li>
 </ol>
 
@@ -975,9 +982,10 @@
     <li><a href="#配置-rclone">配置 rclone</a>
       <ol>
         <li><a href="#进入-docker">进入 Docker</a></li>
+        <li><a href="#退出-docker">退出 Docker</a></li>
       </ol>
     </li>
-    <li><a href="#退出-docker">退出 Docker</a></li>
+    <li><a href="#测试下载文件">测试下载文件</a></li>
     <li><a href="#参考">参考</a></li>
   </ol>
 </nav>
