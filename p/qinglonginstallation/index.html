@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='可挂机京东领取京豆和金币'><title>使用 VPS 搭建青龙面板</title>
+
+<link rel='canonical' href='https://www.alienergy.eu.org/p/qinglonginstallation/'>
+
+<link rel="stylesheet" href="/scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css"><meta property='og:title' content='使用 VPS 搭建青龙面板'>
+<meta property='og:description' content='可挂机京东领取京豆和金币'>
+<meta property='og:url' content='https://www.alienergy.eu.org/p/qinglonginstallation/'>
+<meta property='og:site_name' content='静语忆昔'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-07-18T15:20:00&#43;08:00'/><meta property='article:modified_time' content='2022-07-18T15:20:00&#43;08:00'/><meta property='og:image' content='https://www.alienergy.eu.org/p/qinglonginstallation/qinglong_logo.png' />
+<meta name="twitter:title" content="使用 VPS 搭建青龙面板">
+<meta name="twitter:description" content="可挂机京东领取京豆和金币"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://www.alienergy.eu.org/p/qinglonginstallation/qinglong_logo.png' /><script async defer data-website-id="b4c53d76-ec3f-4534-9481-f3d1b73bf451" src="https://umami-seven-plum.vercel.app/yublog.js"></script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu66a60ebc56668b64edd7b3b7f8e485ac_966183_300x0_resize_box_3.png" width="300"
+                            height="298" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">静语忆昔</a></h1>
+            <h2 class="site-description">你比想象の，更有力量!</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Originat'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.alienergy.eu.org/index.xml'
+                        target="_blank"
+                        title="Rss"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://t.me/everynightreading'
+                        target="_blank"
+                        title="Telegram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/qinglonginstallation/">
+                <img src="/p/qinglonginstallation/qinglong_logo_hue200e384111fae663ead57375b8267e6_34385_800x0_resize_box_3.png"
+                        srcset="/p/qinglonginstallation/qinglong_logo_hue200e384111fae663ead57375b8267e6_34385_800x0_resize_box_3.png 800w, /p/qinglonginstallation/qinglong_logo_hue200e384111fae663ead57375b8267e6_34385_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="221" 
+                        loading="lazy"
+                        alt="Featured image of post 使用 VPS 搭建青龙面板" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%95%99%E7%A8%8B%E5%88%86%E4%BA%AB/" >
+                教程分享
+            </a>
+        
+            <a href="/categories/%E4%BA%AC%E4%B8%9C/" >
+                京东
+            </a>
+        
+            <a href="/categories/%E6%92%B8%E7%BE%8A%E6%AF%9B/" >
+                撸羊毛
+            </a>
+        
+            <a href="/categories/telegram_bot/" >
+                Telegram_Bot
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/qinglonginstallation/">使用 VPS 搭建青龙面板</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            可挂机京东领取京豆和金币
+        </h3>
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 18, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><a class="link" href="https://hub.docker.com/r/whyour/qinglong/tags?page=1&amp;ordering=last_updated"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/docker/v/whyour/qinglong?style=flat"
+	
+	
+	
+	loading="lazy"
+	
+		alt="docker version"
+	
+	
+></a> <a class="link" href="https://hub.docker.com/r/whyour/qinglong"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/docker/pulls/whyour/qinglong?style=flat"
+	
+	
+	
+	loading="lazy"
+	
+		alt="docker pulls"
+	
+	
+></a> <a class="link" href="https://hub.docker.com/r/whyour/qinglong"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/docker/stars/whyour/qinglong?style=flat"
+	
+	
+	
+	loading="lazy"
+	
+		alt="docker stars"
+	
+	
+></a> <a class="link" href="https://hub.docker.com/r/whyour/qinglong"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/docker/image-size/whyour/qinglong?style=flat"
+	
+	
+	
+	loading="lazy"
+	
+		alt="docker image size"
+	
+	
+></a></p>
+<h2 id="简介">简介</h2>
+<blockquote>
+<p><a class="link" href="https://github.com/whyour/qinglong"  target="_blank" rel="noopener"
+    ><code>青龙面板</code></a>：支持python3、javaScript、shell、typescript 的定时任务管理面板。<br>
+青龙面板有点类似油猴，它是一个脚本管理系统，本身不具有撸羊毛的功能。可以用来挂京东赚点京豆、金币，全当折腾玩吧。</p>
+</blockquote>
+<h2 id="docker-使用">Docker 使用</h2>
+<h3 id="安装-docker">安装 Docker</h3>
+<p>国外机（推荐）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">curl -sSL https://get.docker.com/ | sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>国内机（连接 Telegram 时，需要代理）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">curl -sSL https://get.daocloud.io/docker | sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="启动-docker">启动 Docker</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">systemctl start docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="设置-docker-开机自启动">设置 Docker 开机自启动</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">systemctl enable docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="将普通用户添加到docker用户组">将普通用户添加到docker用户组</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">groupadd docker
+</span></span><span class="line"><span class="cl">gpasswd -a ashin docker
+</span></span><span class="line"><span class="cl">systemctl restart docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="青龙面板安装">青龙面板安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">docker run -dit \
+</span></span><span class="line"><span class="cl">  -v $PWD/ql:/ql/data \
+</span></span><span class="line"><span class="cl">  -p 5700:5700 \
+</span></span><span class="line"><span class="cl">  --name qinglong \
+</span></span><span class="line"><span class="cl">  --hostname qinglong \
+</span></span><span class="line"><span class="cl">  --restart unless-stopped \
+</span></span><span class="line"><span class="cl">  whyour/qinglong:latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>部署完后，直接访问ip:5700端口即可，如下图。（5700为映射端口）</p>
+<p><img src="/p/qinglonginstallation/qinglong_1.png"
+	width="1293"
+	height="621"
+	srcset="/p/qinglonginstallation/qinglong_1_hu8742e17132bcc2894d93eca399e628ee_27648_480x0_resize_box_3.png 480w, /p/qinglonginstallation/qinglong_1_hu8742e17132bcc2894d93eca399e628ee_27648_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="208"
+		data-flex-basis="499px"
+	
+></p>
+<h2 id="配置-telegram_bot">配置 Telegram_Bot</h2>
+<p>到 <a class="link" href="https://t.me/BotFather"  target="_blank" rel="noopener"
+    >BotFather</a> 中申请Bot后，获取 <code>token</code></p>
+<p>到 <a class="link" href="https://t.me/getidsbot"  target="_blank" rel="noopener"
+    >GetIDs Bot</a> 中获取 <code>user_id</code></p>
+<p>在通知设置选“Telegram机器人”，然后填写 token 、user_id</p>
+<p><img src="/p/qinglonginstallation/qinglong_2.png"
+	width="1920"
+	height="969"
+	srcset="/p/qinglonginstallation/qinglong_2_hu6a3e00b30309de0f67b3ec25a3ad4f85_62802_480x0_resize_box_3.png 480w, /p/qinglonginstallation/qinglong_2_hu6a3e00b30309de0f67b3ec25a3ad4f85_62802_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="198"
+		data-flex-basis="475px"
+	
+></p>
+<h2 id="添加定时任务">添加定时任务</h2>
+<p>以京东脚本为例子</p>
+<p>网上有许多大佬维护的脚本，这里提供一个仓库：<code>https://github.com/curtinlv/JD-Script</code></p>
+<p>我们新建一个订阅管理来拉取以及定时更新脚本：</p>
+<ol>
+<li>点击新建任订阅</li>
+<li>名字随意填</li>
+<li>类型：公开仓库</li>
+<li>链接填写：<code>https://github.com/curtinlv/JD-Script.git</code> 注意，此链接与所选用的脚本仓库有关</li>
+<li>定时类型：crontab</li>
+<li>定时规则：<code>0 0 1 * * *</code>  意思为每天凌晨一点执行</li>
+<li>点击确定</li>
+<li>点击运行</li>
+</ol>
+<p><img src="/p/qinglonginstallation/qinglong_3.png"
+	width="1920"
+	height="969"
+	srcset="/p/qinglonginstallation/qinglong_3_hu06bea29af7c13c29c80ad83b80592016_77757_480x0_resize_box_3.png 480w, /p/qinglonginstallation/qinglong_3_hu06bea29af7c13c29c80ad83b80592016_77757_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="198"
+		data-flex-basis="475px"
+	
+></p>
+<p><img src="/p/qinglonginstallation/qinglong_4.png"
+	width="1740"
+	height="314"
+	srcset="/p/qinglonginstallation/qinglong_4_hu8c5f66304244bfefa3fd425040f682e1_22072_480x0_resize_box_3.png 480w, /p/qinglonginstallation/qinglong_4_hu8c5f66304244bfefa3fd425040f682e1_22072_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="554"
+		data-flex-basis="1329px"
+	
+></p>
+<p>回到定时任务后，可以看到许多定时任务都已经添加到任务列表</p>
+<p><img src="/p/qinglonginstallation/qinglong_5.png"
+	width="1920"
+	height="969"
+	srcset="/p/qinglonginstallation/qinglong_5_hu45ebd5578d91201a36923259d6c9dbb7_114758_480x0_resize_box_3.png 480w, /p/qinglonginstallation/qinglong_5_hu45ebd5578d91201a36923259d6c9dbb7_114758_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="198"
+		data-flex-basis="475px"
+	
+></p>
+<h2 id="设置账号信息">设置账号信息</h2>
+<p>一切就绪后，接下来就是最重要的环节：配置我们的京东账号信息<br>
+<code>COOKIE</code>可用于识别京东账户，证明「你是你」<br>
+通过 Chrome 浏览器可以提取这个东西</p>
+<p>1、打开 Chrome 开发者工具，通常是<code>F12</code>. 切换到手机视图后访问：<code>https://wqs.jd.com/</code></p>
+<p><img src="/p/qinglonginstallation/cookie_1.png"
+	width="654"
+	height="191"
+	srcset="/p/qinglonginstallation/cookie_1_hu8ed24b3fb7841804453d30be9e1bd4d0_20915_480x0_resize_box_3.png 480w, /p/qinglonginstallation/cookie_1_hu8ed24b3fb7841804453d30be9e1bd4d0_20915_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="342"
+		data-flex-basis="821px"
+	
+></p>
+<p>2、登录京东账号成功后，先清除一下记录：</p>
+<p><img src="/p/qinglonginstallation/cookie_2.png"
+	width="694"
+	height="139"
+	srcset="/p/qinglonginstallation/cookie_2_hu95e60f992aeb19b33cc5e6ecdd3187fe_16698_480x0_resize_box_3.png 480w, /p/qinglonginstallation/cookie_2_hu95e60f992aeb19b33cc5e6ecdd3187fe_16698_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="499"
+		data-flex-basis="1198px"
+	
+></p>
+<p>3、然后再访问：<code>https://home.m.jd.com/</code>。记录列表的第一个应该是<code>home.m.jd.com</code>，点开它，右侧可以看到<code>COOKIE</code>，非常多。</p>
+<p><img src="/p/qinglonginstallation/cookie_3.png"
+	width="1297"
+	height="680"
+	srcset="/p/qinglonginstallation/cookie_3_hufb8b92b90ded0acf805b97350538a675_85390_480x0_resize_box_3.png 480w, /p/qinglonginstallation/cookie_3_hufb8b92b90ded0acf805b97350538a675_85390_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="190"
+		data-flex-basis="457px"
+	
+></p>
+<p>4、我们只需要两条：<code>pt_key</code>与<code>pt_pin</code>，一般在中间字段，把它们复制出来，结尾分号不要漏掉。最后应该类似：<code>pt_key=AFEHYTWpCDD4slF11wQeWjW22zJqWYMw7lIU-CDqJHCykFdIZfNS_rGRbAsj-VfLdk9iL6RjB74; pt_pin=54456641-7;</code></p>
+<p>5、回到青龙面板，点击 环境变量 - 新建环境变量</p>
+<ul>
+<li>名称：<code>JD_COOKIE</code></li>
+<li>自动拆分：否</li>
+<li>值：上面复制的</li>
+<li>确定保存</li>
+</ul>
+<p><code>如需添加多个账户，另外新建变量后将账户信息填入即可。自动检测。</code></p>
+<blockquote>
+<p>提醒：并不是所有的定时任务都可用，不可用时，请在网上寻找大佬们的新脚本使用。</p>
+</blockquote>
+<h2 id="参考">参考</h2>
+<ol>
+<li>
+<p><a class="link" href="https://chenhe.me/post/get-the-best-deal-with-qinglong/"  target="_blank" rel="noopener"
+    >青龙面板撸羊毛</a></p>
+</li>
+<li>
+<p><a class="link" href="https://blog.kermsite.com/p/qinglong/"  target="_blank" rel="noopener"
+    >青龙面板：挂机京东领取京豆和金币</a></p>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/arpt-bot/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://github-readme-stats.vercel.app/api/pin/?username=666wcy&amp;repo=ARPT-Bot" loading="lazy" data-key="arpt-bot" data-hash="https://github-readme-stats.vercel.app/api/pin/?username=666wcy&amp;repo=ARPT-Bot"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ARPT-Bot 搭建</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/add-running-time/">
+        
+        
+            <div class="article-image">
+                <img src="/p/add-running-time/add-running-time.a4aea2b3a499b853ed744d7491c77b59_hu68f6f581fb37e9e00f02979bb55ef386_905636_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 网站底部运行时间统计"
+                        data-key="add-running-time" 
+                        data-hash="md5-pK6is6SZuFPtdE10kcd7WQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网站底部运行时间统计</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div id="cusdis_thread"
+  data-host="https://cusdis-e95vfq1tq-originat.vercel.app"
+  data-app-id="35a74cb5-fde6-4262-b49b-fdf72264bfcd"
+  data-page-id="0158851a7a7ea5d11a845de8a20d55ec"
+  data-page-url="https://www.alienergy.eu.org/p/qinglonginstallation/"
+  data-page-title="使用 VPS 搭建青龙面板"
+></div>
+<script defer src="https://cusdis-e95vfq1tq-originat.vercel.app/js/widget/lang/zh-cn.js"></script>
+<script async defer src="https://cusdis-e95vfq1tq-originat.vercel.app/js/cusdis.es.js"></script>
+
+
+<script>
+    function setCusdisTheme(theme) {
+        let cusdis = document.querySelector('#cusdis_thread iframe');
+        if (cusdis) {
+            window.CUSDIS.setTheme(theme)
+        }
+    }
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        setCusdisTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 静语忆昔
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.12.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+
+    
+    <section class="powerby"> 
+        
+        
+        
+            
+            <span id="sitetime"></span><span id="sitetime" style="color: #b89c72;"></span>
+            <script language=javascript>
+                function siteTime(){
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth()+1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    
+
+                    var t1 = Date.UTC(2022,7,11,02,30,0); 
+                    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                    var diff = t2-t1;
+                    var diffYears = Math.floor(diff/years);
+                    var diffDays = Math.floor((diff/days)-diffYears*365);
+                    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+                    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+                    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+                    document.getElementById("sitetime").innerHTML=diffYears+" 年 "+diffDays+" 天 "+diffHours+" 时 "+diffMinutes+" 分 "+diffSeconds+" 秒";
+                }
+                siteTime();
+            </script>
+            <style>
+                #sitetime {
+                    animation: change 50s infinite;
+                    font-weight: 800;
+                }
+            
+                @keyframes change {
+                    0% {
+                        color: #85bfe5;
+                    }
+            
+                    25% {
+                        color: #a08c8c;
+                    }
+            
+                    50% {
+                        color: #746c50;
+                    }
+            
+                    75% {
+                        color: #ddc2ee;
+                    }
+            
+                    100% {
+                        color: #8c98a2;
+                    }
+                }
+            </style>
+        
+        
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#docker-使用">Docker 使用</a>
+      <ol>
+        <li><a href="#安装-docker">安装 Docker</a></li>
+        <li><a href="#启动-docker">启动 Docker</a></li>
+        <li><a href="#设置-docker-开机自启动">设置 Docker 开机自启动</a></li>
+        <li><a href="#将普通用户添加到docker用户组">将普通用户添加到docker用户组</a></li>
+      </ol>
+    </li>
+    <li><a href="#青龙面板安装">青龙面板安装</a></li>
+    <li><a href="#配置-telegram_bot">配置 Telegram_Bot</a></li>
+    <li><a href="#添加定时任务">添加定时任务</a></li>
+    <li><a href="#设置账号信息">设置账号信息</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
