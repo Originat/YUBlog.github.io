@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Telegram_Bot on 静语忆昔</title>
-        <link>https://www.alienergy.eu.org/categories/telegram_bot/</link>
-        <description>Recent content in Telegram_Bot on 静语忆昔</description>
+        <title>TGBot on 静语忆昔</title>
+        <link>https://www.alienergy.eu.org/categories/tgbot/</link>
+        <description>Recent content in TGBot on 静语忆昔</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 18 Jul 2022 15:20:00 +0800</lastBuildDate><atom:link href="https://www.alienergy.eu.org/categories/telegram_bot/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 18 Jul 2022 15:20:00 +0800</lastBuildDate><atom:link href="https://www.alienergy.eu.org/categories/tgbot/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用 VPS 搭建青龙面板</title>
         <link>https://www.alienergy.eu.org/p/qinglonginstallation/</link>
         <pubDate>Mon, 18 Jul 2022 15:20:00 +0800</pubDate>
