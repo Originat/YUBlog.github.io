@@ -5,10 +5,11 @@
         <link>https://www.alienergy.eu.org/categories/rclone/</link>
         <description>Recent content in Rclone on 静语忆昔</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language><atom:link href="https://www.alienergy.eu.org/categories/rclone/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>zh-cn</language>
+        <lastBuildDate>Mon, 18 Jul 2022 00:20:00 +0800</lastBuildDate><atom:link href="https://www.alienergy.eu.org/categories/rclone/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>ARPT-Bot 搭建</title>
         <link>https://www.alienergy.eu.org/p/arpt-bot/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 18 Jul 2022 00:20:00 +0800</pubDate>
         
         <guid>https://www.alienergy.eu.org/p/arpt-bot/</guid>
         <description>&lt;img src="https://github-readme-stats.vercel.app/api/pin/?username=666wcy&repo=ARPT-Bot" alt="Featured image of post ARPT-Bot 搭建" /&gt;ARPT-Bot：一个基于Python3的Bot。目前支持以Docker的方式部署在vps上。支持Aria2、本子下载、网易云音乐下载、Pixiv榜单下载、Youtue-dl支持、搜图。
