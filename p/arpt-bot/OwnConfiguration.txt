@@ -9,7 +9,7 @@ docker run -d \
     -e Upload=ZHAlist \
     -e Rclone_share=False \
     -e Error_user_info="你没有使用权限" \
-    -p 22399:22399 \
+    -p 22399:8868 \
    benchao/arpt:v2.1.0
 
 client id: 334893a8-0d92-4180-9a20-c7509196ab8b

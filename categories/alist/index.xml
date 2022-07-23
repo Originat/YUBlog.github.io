@@ -12,8 +12,9 @@
         <pubDate>Wed, 20 Jul 2022 23:20:00 +0800</pubDate>
         
         <guid>https://www.alienergy.eu.org/p/alist.flyio.alwaysdata/</guid>
-        <description>&lt;img src="https://www.alienergy.eu.org/p/alist.flyio.alwaysdata/alist_1.svg" alt="Featured image of post 使用免费 PAAS 搭建 Alist" /&gt;简介 Alist：一款支持多种存储的目录文件列表程序，支持 web 浏览与 webdav，后端基于gin，前端使用react。演示地址：https://alist.nn.ci
-使用 Fly.io 部署 使用 GitHub Actions 自动部署 先到 Fly.io 注册账号，注意：注册时要记得绑定信用卡，银联的就行 在电脑 cmd 中安装 Fly.io，Windows电脑安装脚本： iwr https://fly.io/install.ps1 -useb | iex ，安装后运行flyctl auth login,在跳出的浏览器中进行登录授权，然后运行 flyctl launch 来创建、配置和部署新应用程序,记住创建的名字 Fork alist-fly.io-automation 启用Action 在 Fork 的项目中，选择 Settings -&amp;gt; Secrets -&amp;gt; Actions 中增加FLY_API_TOKEN、APP_NAME、DATABASE、SQLUSER、SQLPASSWORD、SQLHOST、SQLPORT和SQLNAME安全字段（使用sqlite3 时，只添加 FLY_API_TOKEN、APP_NAME、DATABASE) FLY_API_TOKEN - Fly API 接口 Token 值，可访问 https://web.fly.io/user/personal_access_tokens 或在本地执行flyctl auth token查看 APP_NAME - 应用名称，注意此名称全局唯一 DATABASE - 数据库类型（sqlite3 / mysql） SQLUSER - MySQL 用户名（数据库类型为远程 MySQL 时需要更改） SQLPASSWORD - MySQL 密码（数据库类型为远程 MySQL 时需要更改） SQLHOST - MySQL 主机地址（数据库类型为远程 MySQL 时需要更改） SQLPORT - MySQL 端口（数据库类型为远程 MySQL 时需要更改） SQLNAME - MySQL 数据库名称（数据库类型为远程 MySQL 时需要更改） 设置好后，代码自行触发部署，另外该项目已设置每月三号八点（UTC）自动部署，可在 .</description>
+        <description>&lt;img src="https://www.alienergy.eu.org/p/alist.flyio.alwaysdata/alist_1.png" alt="Featured image of post 使用免费 PAAS 搭建 Alist" /&gt;简介 Alist：一款支持多种存储的目录文件列表程序，支持 web 浏览与 webdav，后端基于gin，前端使用react。演示地址：https://alist.nn.ci
+使用 Fly.io 部署 使用 GitHub Actions 自动部署 先到 Fly.io 注册账号，注意：注册时要记得绑定信用卡，银联的就行 创建 fly 应用程序（app）：fly launch （选择 ams (Amsterdam,Netherlands)） 创建 fly 卷（volume）：flyctl volumes create data --region ams --size 1 Fork alist-fly.io 后，在 Settings -&amp;gt; Secrets -&amp;gt; Actions 中增加 FLY_API_TOKEN、APP_NAME 安全字段 FLY_API_TOKEN - Fly API 接口 Token 值，可访问 https://web.fly.io/user/personal_access_tokens 或在本地执行 flyctl auth token 查看 APP_NAME - 应用名称，注意此名称全局唯一 设置好后，代码自行触发部署，已设置每月十八号八点（UTC）自动部署，可在 .github/workflows/main.yml 中进行修改。
+初始密码在 Fly.io 的监控日志中进行查看，Dashboard -&amp;gt; personal -&amp;gt; 应用程序的名字 -&amp;gt; Monitoring</description>
         </item>
         
     </channel>
