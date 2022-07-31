@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='使用免费容器搭建青龙面板'><title>使用 PAAS 搭建青龙面板</title>
+
+<link rel='canonical' href='https://www.alienergy.eu.org/p/qinglong-paas/'>
+
+<link rel="stylesheet" href="/scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css"><meta property='og:title' content='使用 PAAS 搭建青龙面板'>
+<meta property='og:description' content='使用免费容器搭建青龙面板'>
+<meta property='og:url' content='https://www.alienergy.eu.org/p/qinglong-paas/'>
+<meta property='og:site_name' content='静语忆昔'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='技术类' /><meta property='article:tag' content='PAAS' /><meta property='article:published_time' content='2022-07-29T21:00:00&#43;08:00'/><meta property='article:modified_time' content='2022-07-29T21:00:00&#43;08:00'/>
+<meta name="twitter:title" content="使用 PAAS 搭建青龙面板">
+<meta name="twitter:description" content="使用免费容器搭建青龙面板"><script async defer data-website-id="b4c53d76-ec3f-4534-9481-f3d1b73bf451" src="https://umami-seven-plum.vercel.app/yublog.js"></script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu66a60ebc56668b64edd7b3b7f8e485ac_966183_300x0_resize_box_3.png" width="300"
+                            height="298" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">静语忆昔</a></h1>
+            <h2 class="site-description">你比想象の，更有力量!</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Originat'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.alienergy.eu.org/index.xml'
+                        target="_blank"
+                        title="Rss"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://t.me/everynightreading'
+                        target="_blank"
+                        title="Telegram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%AC%94%E8%AE%B0/" >
+                笔记
+            </a>
+        
+            <a href="/categories/divio/" >
+                Divio
+            </a>
+        
+            <a href="/categories/fly.io/" >
+                Fly.io
+            </a>
+        
+            <a href="/categories/railway/" >
+                Railway
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/qinglong-paas/">使用 PAAS 搭建青龙面板</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            使用免费容器搭建青龙面板
+        </h3>
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 29, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><a class="link" href="https://hub.docker.com/r/whyour/qinglong/tags?page=1&amp;ordering=last_updated"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/docker/v/whyour/qinglong?style=flat"
+	
+	
+	
+	loading="lazy"
+	
+		alt="docker version"
+	
+	
+></a> <a class="link" href="https://hub.docker.com/r/whyour/qinglong"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/docker/pulls/whyour/qinglong?style=flat"
+	
+	
+	
+	loading="lazy"
+	
+		alt="docker pulls"
+	
+	
+></a> <a class="link" href="https://hub.docker.com/r/whyour/qinglong"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/docker/stars/whyour/qinglong?style=flat"
+	
+	
+	
+	loading="lazy"
+	
+		alt="docker stars"
+	
+	
+></a> <a class="link" href="https://hub.docker.com/r/whyour/qinglong"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/docker/image-size/whyour/qinglong?style=flat"
+	
+	
+	
+	loading="lazy"
+	
+		alt="docker image size"
+	
+	
+></a></p>
+<h2 id="前言">前言</h2>
+<blockquote>
+<p>因手上的服务器大多数都是短期测试的，并不适合长期运行青龙面板服务，故想到使用 PAAS 容器进行搭建，本文使用Divio、Railway、Fly.io进行搭建，并在搭建过程中遇到的问题作为记录。</p>
+</blockquote>
+<h2 id="简介">简介</h2>
+<blockquote>
+<p><a class="link" href="https://github.com/whyour/qinglong"  target="_blank" rel="noopener"
+    ><code>青龙面板</code></a>：支持python3、javaScript、shell、typescript 的定时任务管理面板。<br>
+青龙面板有点类似油猴，它是一个脚本管理系统，本身不具有撸羊毛的功能。可以用来挂京东赚点京豆、金币，全当折腾玩吧。</p>
+</blockquote>
+<h2 id="注意">注意</h2>
+<blockquote>
+<p>因不同的 PAAS 开放的端口不同（一般都会开放80与443），所以在某些容器中并不能使用傻妞等服务</p>
+</blockquote>
+<h2 id="使用-divio-搭建">使用 Divio 搭建</h2>
+<p>该容器分为 <code>TEST</code> 和 <code>LIVE</code> 两部分，我们直接部署在 <code>LIVE</code> 中</p>
+<ol>
+<li>Fork <a class="link" href="https://github.com/Originat/qinglong-paas"  target="_blank" rel="noopener"
+    >qinglong-paas</a> 项目</li>
+<li><a class="link" href="https://www.divio.com/"  target="_blank" rel="noopener"
+    >注册Divio</a></li>
+<li>创建新的应用，在 <code>NAME</code> 中填写应用名字，在后面会检测应用名字的重复性
+<img src="/p/qinglong-paas/divio_1.png"
+	width="1059"
+	height="240"
+	srcset="/p/qinglong-paas/divio_1_hu4d89dd26562d152b15dcb6906a567c45_22125_480x0_resize_box_3.png 480w, /p/qinglong-paas/divio_1_hu4d89dd26562d152b15dcb6906a567c45_22125_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="创建新的应用"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="441"
+		data-flex-basis="1059px"
+	
+></li>
+<li>选择仓库时，选 <code>CUSTOM</code>
+<img src="/p/qinglong-paas/divio_2.png"
+	width="677"
+	height="221"
+	srcset="/p/qinglong-paas/divio_2_hu57915ecd15fddf61dada1d6175816b3a_18122_480x0_resize_box_3.png 480w, /p/qinglong-paas/divio_2_hu57915ecd15fddf61dada1d6175816b3a_18122_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="选择自定义仓库"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="306"
+		data-flex-basis="735px"
+	
+></li>
+<li>在自己的Fork项目的下复制 <code>SSH</code> 链接
+<img src="/p/qinglong-paas/divio_3.png"
+	width="1488"
+	height="372"
+	srcset="/p/qinglong-paas/divio_3_hubff37e4262494abfb6c68f4bc5f51e89_66235_480x0_resize_box_3.png 480w, /p/qinglong-paas/divio_3_hubff37e4262494abfb6c68f4bc5f51e89_66235_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="SSH"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="400"
+		data-flex-basis="960px"
+	
+></li>
+<li>在第4步中选<code>CUSTOM</code>后的弹框中，把复制的 <code>SSH</code> 链接粘贴到 <code>REPOSITORY URL</code> 中,然后复制密钥
+<img src="/p/qinglong-paas/divio_4.png"
+	width="800"
+	height="355"
+	srcset="/p/qinglong-paas/divio_4_hu663875c30db1cbf2f2d98db6283b0024_29291_480x0_resize_box_3.png 480w, /p/qinglong-paas/divio_4_hu663875c30db1cbf2f2d98db6283b0024_29291_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="复制密钥"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="225"
+		data-flex-basis="540px"
+	
+></li>
+<li>把复制的密钥粘贴到Fork项目中，Settings -&gt; Deploy keys -&gt; Add deploy key ，名字随意
+<img src="/p/qinglong-paas/divio_5.png"
+	width="1152"
+	height="628"
+	srcset="/p/qinglong-paas/divio_5_hu1acf58fee36ecce3bd7acd42d36645e9_48022_480x0_resize_box_3.png 480w, /p/qinglong-paas/divio_5_hu1acf58fee36ecce3bd7acd42d36645e9_48022_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="粘贴密钥"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="183"
+		data-flex-basis="440px"
+	
+></li>
+<li>回到Divio中，点击<code>CONTINUE</code>
+<img src="/p/qinglong-paas/divio_6.png"
+	width="804"
+	height="346"
+	srcset="/p/qinglong-paas/divio_6_huc1ae7de609a7474e41668273bedfb6e6_38133_480x0_resize_box_3.png 480w, /p/qinglong-paas/divio_6_huc1ae7de609a7474e41668273bedfb6e6_38133_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="232"
+		data-flex-basis="557px"
+	
+></li>
+<li>进入新建的Divio项目中，在 <code>LIVE</code> 中的 <code>Env Variables</code> 添加关键字<code>PORT</code>，值为<code>5700</code>
+<img src="/p/qinglong-paas/divio_7.png"
+	width="1491"
+	height="439"
+	srcset="/p/qinglong-paas/divio_7_hu02b6426ceafd1b339e34ad776d2d4f05_60807_480x0_resize_box_3.png 480w, /p/qinglong-paas/divio_7_hu02b6426ceafd1b339e34ad776d2d4f05_60807_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="339"
+		data-flex-basis="815px"
+	
+></li>
+<li>在应用中回到Environments，在 <code>LIVE</code> 中点击 <code>DEPLOY</code>，出现 <code>succeeded</code>后，表示部署完成，点击 <code>ENV URL</code> 就可以打开网站了
+<img src="/p/qinglong-paas/divio_8.png"
+	width="1222"
+	height="619"
+	srcset="/p/qinglong-paas/divio_8_hu4e5610b9cf7e233893152dd65ead6435_83554_480x0_resize_box_3.png 480w, /p/qinglong-paas/divio_8_hu4e5610b9cf7e233893152dd65ead6435_83554_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="197"
+		data-flex-basis="473px"
+	
+></li>
+</ol>
+<h2 id="使用-railway-搭建">使用 Railway 搭建</h2>
+<h3 id="tip">Tip</h3>
+<blockquote>
+<p>从2022年8月1日起，Railway 调整了定价计划，免费用户一个月只能运行500小时</p>
+</blockquote>
+<ol>
+<li><a class="link" href="https://railway.app/?referralCode=Xh3DQG"  target="_blank" rel="noopener"
+    >注册Railway</a></li>
+<li>点击以下按钮直接部署使用即可<br>
+<a class="link" href="https://railway.app/new/template?template=https://github.com/Originat/qinglong-paas"  target="_blank" rel="noopener"
+    ><img src="https://www.railway.app/button.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Deploy on Railway"
+	
+	
+></a><br>
+在 <code>Variables</code> 添加关键字<code>PORT</code>，值为<code>5700</code><br>
+<img src="/p/qinglong-paas/Railway_1.png"
+	width="1132"
+	height="277"
+	srcset="/p/qinglong-paas/Railway_1_hu8f5bdde68a681edcd0a7a7d343d12b0b_28624_480x0_resize_box_3.png 480w, /p/qinglong-paas/Railway_1_hu8f5bdde68a681edcd0a7a7d343d12b0b_28624_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="408"
+		data-flex-basis="980px"
+	
+></li>
+</ol>
+<h2 id="使用-flyio-搭建">使用 Fly.io 搭建</h2>
+<h3 id="提示">提示</h3>
+<blockquote>
+<p>Fly.io 免费版并不能完整部署，因为Fly.io免费版是全时运行 3 个具有 256MB RAM 的共享 cpu-1x VM，单独一个都低于青龙面板所需的内存，需要添加256MB RAM才能完整运行，而添加则需要加钱。</p>
+</blockquote>
+<ol>
+<li>先到 <a class="link" href="https://fly.io/"  target="_blank" rel="noopener"
+    >Fly.io</a> 注册账号，<em><strong>注意：注册时要记得绑定信用卡，银联的就行</strong></em></li>
+<li>创建 fly 应用程序（app）：<code>fly launch</code></li>
+<li>下载 <a class="link" href="https://github.com/Originat/qinglong-paas/archive/refs/heads/main.zip"  target="_blank" rel="noopener"
+    >qinglong-paas</a> 代码</li>
+<li>解压后，找到 <code>fly.toml</code> 文件，修改 <code>app = &quot;qinglong&quot;</code> 为自己创建应用程序的名字</li>
+<li>在有 <code>fly.toml</code> 文件夹下，打开 cmd 命令界面，执行 <code>fly deploy</code>，这会应网络问题而失败，需多推送几次才能成功。</li>
+</ol>
+<blockquote>
+<p>如果想添加订阅功能可转到 <a class="link" href="../qinglonginstallation/" ><code>使用 VPS 搭建青龙面板</code></a> 查看</p>
+</blockquote>
+<h2 id="参考">参考</h2>
+<ol>
+<li><a class="link" href="https://github.com/whyour/qinglong"  target="_blank" rel="noopener"
+    >whyour/qinglong</a></li>
+<li><a class="link" href="https://github.com/York618/qinglong-railway"  target="_blank" rel="noopener"
+    >York618/qinglong-railway</a></li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%8A%80%E6%9C%AF%E7%B1%BB/">技术类</a>
+        
+            <a href="/tags/paas/">PAAS</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/alist.flyio.alwaysdata/">
+        
+        
+            <div class="article-image">
+                <img src="/p/alist.flyio.alwaysdata/alist_1.085f1b3f156ef1aac0fa1f3148817eeb_hue451d6ba0d494bc0fc4bf142b88156b3_1811362_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 使用免费 PAAS 搭建 Alist"
+                        data-key="alist.flyio.alwaysdata" 
+                        data-hash="md5-CF8bPxVu8arA&#43;h8xSIF&#43;6w==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用免费 PAAS 搭建 Alist</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/arpt-bot-fly.io/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用 Fly.io 搭建 ARPT-Bot</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/arpt-bot/">
+        
+        
+            <div class="article-image">
+                <img src="/p/arpt-bot/arpt-bot.510884db9e3d3fea13959279dee65b73_hubf92167c8ef5014ddf3c863fd27ea34e_43585_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 使用VPS搭建ARPT-Bot"
+                        data-key="arpt-bot" 
+                        data-hash="md5-UQiE2549P&#43;oTlZJ53uZbcw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用VPS搭建ARPT-Bot</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/qinglonginstallation/">
+        
+        
+            <div class="article-image">
+                <img src="/p/qinglonginstallation/qinglong_logo.a4e9bc395d1df862f7203ffed88fc3c9_hue200e384111fae663ead57375b8267e6_34385_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 使用 VPS 搭建青龙面板"
+                        data-key="qinglonginstallation" 
+                        data-hash="md5-pOm8OV0d&#43;GL3ID/&#43;2I/DyQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用 VPS 搭建青龙面板</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/add-running-time/">
+        
+        
+            <div class="article-image">
+                <img src="/p/add-running-time/add-running-time.0da3648426f16894fb5d080a7aa587b8_huda26ccf88421a2df6a82715f6e8b9d34_1021432_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 网站底部运行时间统计"
+                        data-key="add-running-time" 
+                        data-hash="md5-DaNkhCbxaJT7XQgKeqWHuA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网站底部运行时间统计</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div id="cusdis_thread"
+  data-host="https://cusdis-e95vfq1tq-originat.vercel.app"
+  data-app-id="35a74cb5-fde6-4262-b49b-fdf72264bfcd"
+  data-page-id="5fff7f84832f3ec73e36c9981e0696c8"
+  data-page-url="https://www.alienergy.eu.org/p/qinglong-paas/"
+  data-page-title="使用 PAAS 搭建青龙面板"
+></div>
+<script defer src="https://cusdis-e95vfq1tq-originat.vercel.app/js/widget/lang/zh-cn.js"></script>
+<script async defer src="https://cusdis-e95vfq1tq-originat.vercel.app/js/cusdis.es.js"></script>
+
+
+<script>
+    function setCusdisTheme(theme) {
+        let cusdis = document.querySelector('#cusdis_thread iframe');
+        if (cusdis) {
+            window.CUSDIS.setTheme(theme)
+        }
+    }
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        setCusdisTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 静语忆昔
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.12.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+
+    
+    <section class="powerby"> 
+        
+        
+        
+            
+            <span id="sitetime"></span><span id="sitetime" style="color: #b89c72;"></span>
+            <script language=javascript>
+                function siteTime(){
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth()+1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    
+
+                    var t1 = Date.UTC(2022,7,11,02,30,0); 
+                    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                    var diff = t2-t1;
+                    var diffYears = Math.floor(diff/years);
+                    var diffDays = Math.floor((diff/days)-diffYears*365);
+                    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+                    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+                    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+                    document.getElementById("sitetime").innerHTML=diffYears+" 年 "+diffDays+" 天 "+diffHours+" 时 "+diffMinutes+" 分 "+diffSeconds+" 秒";
+                }
+                siteTime();
+            </script>
+            <style>
+                #sitetime {
+                    animation: change 50s infinite;
+                    font-weight: 800;
+                }
+            
+                @keyframes change {
+                    0% {
+                        color: #85bfe5;
+                    }
+            
+                    25% {
+                        color: #a08c8c;
+                    }
+            
+                    50% {
+                        color: #746c50;
+                    }
+            
+                    75% {
+                        color: #ddc2ee;
+                    }
+            
+                    100% {
+                        color: #8c98a2;
+                    }
+                }
+            </style>
+        
+        
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#注意">注意</a></li>
+    <li><a href="#使用-divio-搭建">使用 Divio 搭建</a></li>
+    <li><a href="#使用-railway-搭建">使用 Railway 搭建</a>
+      <ol>
+        <li><a href="#tip">Tip</a></li>
+      </ol>
+    </li>
+    <li><a href="#使用-flyio-搭建">使用 Fly.io 搭建</a>
+      <ol>
+        <li><a href="#提示">提示</a></li>
+      </ol>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

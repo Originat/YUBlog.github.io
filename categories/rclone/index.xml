@@ -7,12 +7,12 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <lastBuildDate>Mon, 18 Jul 2022 00:20:00 +0800</lastBuildDate><atom:link href="https://www.alienergy.eu.org/categories/rclone/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>ARPT-Bot 搭建</title>
+        <title>使用VPS搭建ARPT-Bot</title>
         <link>https://www.alienergy.eu.org/p/arpt-bot/</link>
         <pubDate>Mon, 18 Jul 2022 00:20:00 +0800</pubDate>
         
         <guid>https://www.alienergy.eu.org/p/arpt-bot/</guid>
-        <description>&lt;img src="https://github-readme-stats.vercel.app/api/pin/?username=666wcy&repo=ARPT-Bot" alt="Featured image of post ARPT-Bot 搭建" /&gt;ARPT-Bot：一个基于Python3的Bot。目前支持以Docker的方式部署在vps上。支持Aria2、本子下载、网易云音乐下载、Pixiv榜单下载、Youtue-dl支持、搜图。
+        <description>&lt;img src="https://www.alienergy.eu.org/p/arpt-bot/arpt-bot.png" alt="Featured image of post 使用VPS搭建ARPT-Bot" /&gt;ARPT-Bot：一个基于Python3的Bot。目前支持以Docker的方式部署在vps上。支持Aria2、本子下载、网易云音乐下载、Pixiv榜单下载、Youtue-dl支持、搜图。
 本文中提到的 Onedrive client id 和client_secret（密钥），文中并没有说明怎样创建，请参考 Aria2+Rclone+Onedrive实现全自动化下载 和 创建适用于Rclone的OneDrive Azure API
 Docker 使用 安装 Docker 国外机（推荐）
 1 curl -sSL https://get.docker.com/ | sh 国内机（连接 Telegram 时，需要代理）
