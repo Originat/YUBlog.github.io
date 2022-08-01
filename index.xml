@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>静语忆昔</title>
-        <link>https://www.alienergy.eu.org/</link>
+        <link>https://www.alltoone.eu.org/</link>
         <description>Recent content on 静语忆昔</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 29 Jul 2022 21:00:00 +0800</lastBuildDate><atom:link href="https://www.alienergy.eu.org/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 29 Jul 2022 21:00:00 +0800</lastBuildDate><atom:link href="https://www.alltoone.eu.org/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用 PAAS 搭建青龙面板</title>
-        <link>https://www.alienergy.eu.org/p/qinglong-paas/</link>
+        <link>https://www.alltoone.eu.org/p/qinglong-paas/</link>
         <pubDate>Fri, 29 Jul 2022 21:00:00 +0800</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/qinglong-paas/</guid>
+        <guid>https://www.alltoone.eu.org/p/qinglong-paas/</guid>
         <description>前言 因手上的服务器大多数都是短期测试的，并不适合长期运行青龙面板服务，故想到使用 PAAS 容器进行搭建，本文使用Divio、Railway、Fly.io进行搭建，并在搭建过程中遇到的问题作为记录。
 简介 青龙面板：支持python3、javaScript、shell、typescript 的定时任务管理面板。
 青龙面板有点类似油猴，它是一个脚本管理系统，本身不具有撸羊毛的功能。可以用来挂京东赚点京豆、金币，全当折腾玩吧。
@@ -21,31 +21,31 @@ Fork qinglong-paas 项目 注册Divio 创建新的应用，在 NAME 中填写应
         </item>
         <item>
         <title>使用 Fly.io 搭建 ARPT-Bot</title>
-        <link>https://www.alienergy.eu.org/p/arpt-bot-fly.io/</link>
+        <link>https://www.alltoone.eu.org/p/arpt-bot-fly.io/</link>
         <pubDate>Fri, 29 Jul 2022 00:45:00 +0800</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/arpt-bot-fly.io/</guid>
+        <guid>https://www.alltoone.eu.org/p/arpt-bot-fly.io/</guid>
         <description>ARPT-Bot：一个基于Python3的Bot。目前支持以Docker的方式部署在vps上。支持Aria2、本子下载、网易云音乐下载、Pixiv榜单下载、Youtue-dl支持、搜图。
 本文中提到的 Onedrive client id 和client_secret（密钥），文中并没有说明怎样创建，请参考 Aria2+Rclone+Onedrive实现全自动化下载 和 创建适用于Rclone的OneDrive Azure API
 配置 Telegram_Bot 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 start - 查看Bot状态 help - 获取Bot的使用帮助 pixivauthor - 对pixiv画师作品操作 pixivtopall - 对pixiv排行榜进行操作 pixivtopillust - 对插画排行榜进行操作 pixivpid - 发送pixiv该id的图片 magfile - 推送种子文件至aria2下载后上传至网盘 mirror - 推送直链至aria2下载上传至网盘 mirrortg - 推送直链至aria2下载发送到TG magnet - 推送磁力链接至aria2下载后上传至网盘 downtgfile - 发送TG文件并上传至网盘 rclonecopy - 用rclone在网盘间传输 rclonelsd - 用rclone显示网盘文件夹 rclone - 用rclone显示文件夹内详细信息 rclonecopyurl - 用rclonecopyurl的方式直接上传直链文件 getfileid - 发送文件获取fileid getfile - 发送fileid来获取文件 video - 发送视频链接 neteaseid - 通过id获取歌曲信息 searchsong - 搜索网易云音乐歌曲 playlist - 获取歌单信息 odshare - 下载公开的od、sp分享链接文件并上传网盘 odprivate - 下载域内的od、sp分享链接上传到网盘 nhentai - 下载nhentai中对应id的本子 ehentai - 下载nhentai中对应id的本子 picacgsearch - 在哔咔中搜索本子，支持ZIP上传到网盘和发送到TG ehentaisearch - 在ehentai中搜索本子，支持ZIP上传到网盘和发送到TG、发送网页 nhentaisearch - 在nhentai中搜索本子，支持ZIP上传到网盘和发送到TG、发送网页 配置 fly.</description>
         </item>
         <item>
         <title>使用免费 PAAS 搭建 Alist</title>
-        <link>https://www.alienergy.eu.org/p/alist.flyio.alwaysdata/</link>
+        <link>https://www.alltoone.eu.org/p/alist.flyio.alwaysdata/</link>
         <pubDate>Wed, 20 Jul 2022 23:20:00 +0800</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/alist.flyio.alwaysdata/</guid>
-        <description>&lt;img src="https://www.alienergy.eu.org/p/alist.flyio.alwaysdata/alist_1.png" alt="Featured image of post 使用免费 PAAS 搭建 Alist" /&gt;简介 Alist：一款支持多种存储的目录文件列表程序，支持 web 浏览与 webdav，后端基于gin，前端使用react。演示地址：https://alist.nn.ci
+        <guid>https://www.alltoone.eu.org/p/alist.flyio.alwaysdata/</guid>
+        <description>&lt;img src="https://www.alltoone.eu.org/p/alist.flyio.alwaysdata/alist_1.png" alt="Featured image of post 使用免费 PAAS 搭建 Alist" /&gt;简介 Alist：一款支持多种存储的目录文件列表程序，支持 web 浏览与 webdav，后端基于gin，前端使用react。演示地址：https://alist.nn.ci
 使用 Fly.io 部署 使用 GitHub Actions 自动部署 先到 Fly.io 注册账号，注意：注册时要记得绑定信用卡，银联的就行 创建 fly 应用程序（app）：fly launch （选择 ams (Amsterdam,Netherlands)） 创建 fly 卷（volume）：flyctl volumes create data --region ams --size 1 Fork alist-fly.io 后，在 Settings -&amp;gt; Secrets -&amp;gt; Actions 中增加 FLY_API_TOKEN、APP_NAME 安全字段 FLY_API_TOKEN - Fly API 接口 Token 值，可访问 https://web.fly.io/user/personal_access_tokens 或在本地执行 flyctl auth token 查看 APP_NAME - 应用名称，注意此名称全局唯一 设置好后，代码自行触发部署，已设置每月十八号八点（UTC）自动部署，可在 .github/workflows/main.yml 中进行修改。
 初始密码在 Fly.io 的监控日志中进行查看，Dashboard -&amp;gt; personal -&amp;gt; 应用程序的名字 -&amp;gt; Monitoring</description>
         </item>
         <item>
         <title>使用 VPS 搭建青龙面板</title>
-        <link>https://www.alienergy.eu.org/p/qinglonginstallation/</link>
+        <link>https://www.alltoone.eu.org/p/qinglonginstallation/</link>
         <pubDate>Mon, 18 Jul 2022 15:20:00 +0800</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/qinglonginstallation/</guid>
-        <description>&lt;img src="https://www.alienergy.eu.org/p/qinglonginstallation/qinglong_logo.png" alt="Featured image of post 使用 VPS 搭建青龙面板" /&gt;简介 青龙面板：支持python3、javaScript、shell、typescript 的定时任务管理面板。
+        <guid>https://www.alltoone.eu.org/p/qinglonginstallation/</guid>
+        <description>&lt;img src="https://www.alltoone.eu.org/p/qinglonginstallation/qinglong_logo.png" alt="Featured image of post 使用 VPS 搭建青龙面板" /&gt;简介 青龙面板：支持python3、javaScript、shell、typescript 的定时任务管理面板。
 青龙面板有点类似油猴，它是一个脚本管理系统，本身不具有撸羊毛的功能。可以用来挂京东赚点京豆、金币，全当折腾玩吧。
 Docker 使用 安装 Docker 国外机（推荐）
 1 curl -sSL https://get.docker.com/ | sh 国内机（连接 Telegram 时，需要代理）
@@ -53,11 +53,11 @@ Docker 使用 安装 Docker 国外机（推荐）
         </item>
         <item>
         <title>使用VPS搭建ARPT-Bot</title>
-        <link>https://www.alienergy.eu.org/p/arpt-bot/</link>
+        <link>https://www.alltoone.eu.org/p/arpt-bot/</link>
         <pubDate>Mon, 18 Jul 2022 00:20:00 +0800</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/arpt-bot/</guid>
-        <description>&lt;img src="https://www.alienergy.eu.org/p/arpt-bot/arpt-bot.png" alt="Featured image of post 使用VPS搭建ARPT-Bot" /&gt;ARPT-Bot：一个基于Python3的Bot。目前支持以Docker的方式部署在vps上。支持Aria2、本子下载、网易云音乐下载、Pixiv榜单下载、Youtue-dl支持、搜图。
+        <guid>https://www.alltoone.eu.org/p/arpt-bot/</guid>
+        <description>&lt;img src="https://www.alltoone.eu.org/p/arpt-bot/arpt-bot.png" alt="Featured image of post 使用VPS搭建ARPT-Bot" /&gt;ARPT-Bot：一个基于Python3的Bot。目前支持以Docker的方式部署在vps上。支持Aria2、本子下载、网易云音乐下载、Pixiv榜单下载、Youtue-dl支持、搜图。
 本文中提到的 Onedrive client id 和client_secret（密钥），文中并没有说明怎样创建，请参考 Aria2+Rclone+Onedrive实现全自动化下载 和 创建适用于Rclone的OneDrive Azure API
 Docker 使用 安装 Docker 国外机（推荐）
 1 curl -sSL https://get.docker.com/ | sh 国内机（连接 Telegram 时，需要代理）
@@ -65,22 +65,22 @@ Docker 使用 安装 Docker 国外机（推荐）
         </item>
         <item>
         <title>网站底部运行时间统计</title>
-        <link>https://www.alienergy.eu.org/p/add-running-time/</link>
+        <link>https://www.alltoone.eu.org/p/add-running-time/</link>
         <pubDate>Sun, 17 Jul 2022 20:00:00 +0800</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/add-running-time/</guid>
-        <description>&lt;img src="https://www.alienergy.eu.org/p/add-running-time/add-running-time.png" alt="Featured image of post 网站底部运行时间统计" /&gt;以本博客主题（hugo-theme-stack）为例子进行添加时间动态显示
+        <guid>https://www.alltoone.eu.org/p/add-running-time/</guid>
+        <description>&lt;img src="https://www.alltoone.eu.org/p/add-running-time/add-running-time.png" alt="Featured image of post 网站底部运行时间统计" /&gt;以本博客主题（hugo-theme-stack）为例子进行添加时间动态显示
 复制.\themes\hugo-theme-stack\layouts\partials\footer\footer.html到.\layouts\partials\footer同名文件夹下，此目的是为了在后续的主题升级中保留自定义设置，可以在.\themes\hugo-theme-stack\layouts\partials\footer\footer.html中直接修改。
 在文件中添加
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 &amp;lt;!</description>
         </item>
         <item>
         <title>聊聊我为什么写博客</title>
-        <link>https://www.alienergy.eu.org/p/life-write/</link>
+        <link>https://www.alltoone.eu.org/p/life-write/</link>
         <pubDate>Mon, 11 Jul 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/life-write/</guid>
-        <description>&lt;img src="https://www.alienergy.eu.org/p/life-write/life-title.jpg" alt="Featured image of post 聊聊我为什么写博客" /&gt;前言 很早之前，我就已经了解过博客了，一直想搭建个，但当时心里这是想搭着玩，并没有想到搭好后的事情，还觉得浪费时间，所以就不了了之了。去年下半年使用服务器搭了WorldPress，使用了一下，虽然主题丰富插件多，但是运行起来需要的服务器资源多，我当时的也是测试机，之后又是不想理的状态，今年年初，偶尔看到使用Vercel部署Hexo的教程，当时的我并不知道WorldPress与Hexo的区别，在我搭建完后，试写时发现和WorldPress写作方式不一样，需要学会.md文件的编写，然后我又停滞了。一直到了6月底，写博客的心越来越强烈，从而不断地参考资料，经过层层筛选，最后使用Hugo+GithubPages方案搭建了这个博客。
+        <guid>https://www.alltoone.eu.org/p/life-write/</guid>
+        <description>&lt;img src="https://www.alltoone.eu.org/p/life-write/life-title.jpg" alt="Featured image of post 聊聊我为什么写博客" /&gt;前言 很早之前，我就已经了解过博客了，一直想搭建个，但当时心里这是想搭着玩，并没有想到搭好后的事情，还觉得浪费时间，所以就不了了之了。去年下半年使用服务器搭了WorldPress，使用了一下，虽然主题丰富插件多，但是运行起来需要的服务器资源多，我当时的也是测试机，之后又是不想理的状态，今年年初，偶尔看到使用Vercel部署Hexo的教程，当时的我并不知道WorldPress与Hexo的区别，在我搭建完后，试写时发现和WorldPress写作方式不一样，需要学会.md文件的编写，然后我又停滞了。一直到了6月底，写博客的心越来越强烈，从而不断地参考资料，经过层层筛选，最后使用Hugo+GithubPages方案搭建了这个博客。
 写博客带来的价值 保持整理资料的习惯 在不断学习的过程中，我收藏的文件资料也越来越多，因为自己是个懒惰的人，虽然一直想着改变，所以在日积月累的情况下，我收藏的资料杂乱无章，如一些教程，明明已经学习过，但是当我看到时还是会继续去收藏，写博客的话就可以作为自己资料进行修改整理，极大减少了重复的事情，也推动着自己保持良好的习惯。
 加强文字表达能力 不要怕自己写的东西没有价值，不值得被传播，要相信每个人都有自己独特的视角。“独特的视角”跟职能、资历、经验都无关，只需要一双能够发现自己独特视角的眼睛。不管你是刚步入职场还是已经工作了20年，不管你是一个实习生还是一个管理者，不管你是哪个部门/岗位，都有自己独特的视角。前提是，要有独立思考的能力和习惯，并且能够把自己的思考用文字表达出来。很多人有一个误区，就是写作的前提是要有极好的文笔/华丽的辞藻/丰厚的语文功底。写作的门槛不在于文字功底，而在于思考深度。看过许多博客的自述，他们一开始文字表达并不是很好的，随着发布的文章越来越多，文字表达能力也随之提升。
 个人思考与成长 经过了学业与工作的各个时期，我发现自己在不同阶段与角色可能会有着截然不同的思考与成长，有时回顾起来也会很有感触。相信几个月甚至几年后的自己也能从这点点滴滴的记录中找到自己当时的心境。当自己逐渐培养起记录生活的习惯，也会让自己能关注与感受到生活的美好，也能更积极地面对来自未来的挑战。个人博客就像自己的一个树洞，在记录与表达自己情绪的同时，也许也会收获一些来自陌生人的温暖。
@@ -90,11 +90,11 @@ Docker 使用 安装 Docker 国外机（推荐）
         </item>
         <item>
         <title>Chinese Test</title>
-        <link>https://www.alienergy.eu.org/p/test-chinese/</link>
+        <link>https://www.alltoone.eu.org/p/test-chinese/</link>
         <pubDate>Wed, 09 Sep 2020 23:51:36 +0800</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/test-chinese/</guid>
-        <description>&lt;img src="https://www.alienergy.eu.org/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" /&gt;正文测试 而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。
+        <guid>https://www.alltoone.eu.org/p/test-chinese/</guid>
+        <description>&lt;img src="https://www.alltoone.eu.org/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" /&gt;正文测试 而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。
 奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。
 引用 思念是最暖的忧伤像一双翅膀
 让我停不了飞不远在过往游荡
@@ -105,66 +105,66 @@ Docker 使用 安装 Docker 国外机（推荐）
         </item>
         <item>
         <title>归档</title>
-        <link>https://www.alienergy.eu.org/archives/</link>
+        <link>https://www.alltoone.eu.org/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.alienergy.eu.org/archives/</guid>
+        <guid>https://www.alltoone.eu.org/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Markdown Syntax Guide</title>
-        <link>https://www.alienergy.eu.org/p/markdown-syntax-guide/</link>
+        <link>https://www.alltoone.eu.org/p/markdown-syntax-guide/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/markdown-syntax-guide/</guid>
-        <description>&lt;img src="https://www.alienergy.eu.org/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" /&gt;&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+        <guid>https://www.alltoone.eu.org/p/markdown-syntax-guide/</guid>
+        <description>&lt;img src="https://www.alltoone.eu.org/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" /&gt;&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
         </item>
         <item>
         <title>Placeholder Text</title>
-        <link>https://www.alienergy.eu.org/p/placeholder-text/</link>
+        <link>https://www.alltoone.eu.org/p/placeholder-text/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/placeholder-text/</guid>
-        <description>&lt;img src="https://www.alienergy.eu.org/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" /&gt;&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
+        <guid>https://www.alltoone.eu.org/p/placeholder-text/</guid>
+        <description>&lt;img src="https://www.alltoone.eu.org/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" /&gt;&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
         </item>
         <item>
         <title>Math Typesetting</title>
-        <link>https://www.alienergy.eu.org/p/math-typesetting/</link>
+        <link>https://www.alltoone.eu.org/p/math-typesetting/</link>
         <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/math-typesetting/</guid>
+        <guid>https://www.alltoone.eu.org/p/math-typesetting/</guid>
         <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
         </item>
         <item>
         <title>Emoji Support</title>
-        <link>https://www.alienergy.eu.org/p/emoji-support/</link>
+        <link>https://www.alltoone.eu.org/p/emoji-support/</link>
         <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/emoji-support/</guid>
-        <description>&lt;img src="https://www.alienergy.eu.org/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
+        <guid>https://www.alltoone.eu.org/p/emoji-support/</guid>
+        <description>&lt;img src="https://www.alltoone.eu.org/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
         </item>
         <item>
         <title>关于</title>
-        <link>https://www.alienergy.eu.org/%E5%85%B3%E4%BA%8E/</link>
+        <link>https://www.alltoone.eu.org/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://www.alienergy.eu.org/%E5%85%B3%E4%BA%8E/</guid>
+        <guid>https://www.alltoone.eu.org/%E5%85%B3%E4%BA%8E/</guid>
         <description>This is a test page for i18n support.</description>
         </item>
         <item>
         <title>搜索</title>
-        <link>https://www.alienergy.eu.org/search/</link>
+        <link>https://www.alltoone.eu.org/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://www.alienergy.eu.org/search/</guid>
+        <guid>https://www.alltoone.eu.org/search/</guid>
         <description></description>
         </item>
         <item>
         <title>友链</title>
-        <link>https://www.alienergy.eu.org/%E5%8F%8B%E9%93%BE/</link>
+        <link>https://www.alltoone.eu.org/%E5%8F%8B%E9%93%BE/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://www.alienergy.eu.org/%E5%8F%8B%E9%93%BE/</guid>
+        <guid>https://www.alltoone.eu.org/%E5%8F%8B%E9%93%BE/</guid>
         <description>To use this feature, add links section to frontmatter.
 This page&amp;rsquo;s frontmatter:
 1 2 3 4 5 6 7 8 9 links: - title: GitHub description: GitHub is the world&amp;#39;s largest software development platform. website: https://github.com image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png - title: TypeScript description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. website: https://www.typescriptlang.org image: ts-logo-128.jpg image field accepts both local and external images.</description>

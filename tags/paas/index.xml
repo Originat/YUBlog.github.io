@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>PAAS on 静语忆昔</title>
-        <link>https://www.alienergy.eu.org/tags/paas/</link>
+        <link>https://www.alltoone.eu.org/tags/paas/</link>
         <description>Recent content in PAAS on 静语忆昔</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 29 Jul 2022 21:00:00 +0800</lastBuildDate><atom:link href="https://www.alienergy.eu.org/tags/paas/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 29 Jul 2022 21:00:00 +0800</lastBuildDate><atom:link href="https://www.alltoone.eu.org/tags/paas/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用 PAAS 搭建青龙面板</title>
-        <link>https://www.alienergy.eu.org/p/qinglong-paas/</link>
+        <link>https://www.alltoone.eu.org/p/qinglong-paas/</link>
         <pubDate>Fri, 29 Jul 2022 21:00:00 +0800</pubDate>
         
-        <guid>https://www.alienergy.eu.org/p/qinglong-paas/</guid>
+        <guid>https://www.alltoone.eu.org/p/qinglong-paas/</guid>
         <description>前言 因手上的服务器大多数都是短期测试的，并不适合长期运行青龙面板服务，故想到使用 PAAS 容器进行搭建，本文使用Divio、Railway、Fly.io进行搭建，并在搭建过程中遇到的问题作为记录。
 简介 青龙面板：支持python3、javaScript、shell、typescript 的定时任务管理面板。
 青龙面板有点类似油猴，它是一个脚本管理系统，本身不具有撸羊毛的功能。可以用来挂京东赚点京豆、金币，全当折腾玩吧。
