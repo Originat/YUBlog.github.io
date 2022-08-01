@@ -397,7 +397,76 @@
 <blockquote>
 <p>因不同的 PAAS 开放的端口不同（一般都会开放80与443），所以在某些容器中并不能使用傻妞等服务</p>
 </blockquote>
+<h2 id="使用-railway-搭建">使用 Railway 搭建</h2>
+<h3 id="tip">Tip</h3>
+<blockquote>
+<p>从2022年8月1日起，Railway 调整了定价计划，在入门计划中，Railway 将帐户限制为500小时的正常运行时间，使用信用卡验证后，升级为开发者计划，每月 5 美元的信用额度不再附带执行限制</p>
+</blockquote>
+<ol>
+<li><a class="link" href="https://railway.app/?referralCode=Xh3DQG"  target="_blank" rel="noopener"
+    >注册Railway</a></li>
+<li>点击以下按钮直接部署使用即可<br>
+<a class="link" href="https://railway.app/new/template?template=https://github.com/Originat/qinglong-paas"  target="_blank" rel="noopener"
+    ><img src="https://www.railway.app/button.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Deploy on Railway"
+	
+	
+></a><br>
+在 <code>Variables</code> 添加关键字<code>PORT</code>，值为<code>5700</code><br>
+<img src="/p/qinglong-paas/Railway_1.png"
+	width="1132"
+	height="277"
+	srcset="/p/qinglong-paas/Railway_1_hu8f5bdde68a681edcd0a7a7d343d12b0b_28624_480x0_resize_box_3.png 480w, /p/qinglong-paas/Railway_1_hu8f5bdde68a681edcd0a7a7d343d12b0b_28624_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="408"
+		data-flex-basis="980px"
+	
+></li>
+</ol>
+<h2 id="使用-flyio-搭建">使用 Fly.io 搭建</h2>
+<h3 id="提示">提示</h3>
+<blockquote>
+<p>Fly.io 免费版并不能完整部署，因为Fly.io免费版是全时运行 3 个具有 256MB RAM 的共享 cpu-1x VM，单独一个都低于青龙面板所需的内存，需要添加256MB RAM才能完整运行，而添加则需要加钱。我使用一个月后发现5美元以下是不收取费用的，所以可以添加 256MB RAM 来完整部署青龙面板</p>
+</blockquote>
+<p>打开新建立的应用，点击左手边的 <code>Scale</code>，把 <code>Memory</code> 调为512M，然后点击 <code>Scale Now</code><br>
+<img src="/p/qinglong-paas/fly.io_1.png"
+	width="989"
+	height="376"
+	srcset="/p/qinglong-paas/fly.io_1_hu7e3b7aafce62b88f58caad8e2394fc4d_51961_480x0_resize_box_3.png 480w, /p/qinglong-paas/fly.io_1_hu7e3b7aafce62b88f58caad8e2394fc4d_51961_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt=" "
+	
+	
+		class="gallery-image" 
+		data-flex-grow="263"
+		data-flex-basis="631px"
+	
+></p>
+<ol>
+<li>先到 <a class="link" href="https://fly.io/"  target="_blank" rel="noopener"
+    >Fly.io</a> 注册账号，<em><strong>注意：注册时要记得绑定信用卡，银联的就行</strong></em></li>
+<li>创建 fly 应用程序（app）：<code>fly launch</code></li>
+<li>下载 <a class="link" href="https://github.com/Originat/qinglong-paas/archive/refs/heads/main.zip"  target="_blank" rel="noopener"
+    >qinglong-paas</a> 代码</li>
+<li>解压后，找到 <code>fly.toml</code> 文件，修改 <code>app = &quot;qinglong&quot;</code> 为自己创建应用程序的名字</li>
+<li>在有 <code>fly.toml</code> 文件夹下，打开 cmd 命令界面，执行 <code>fly deploy</code>，这会应网络问题而失败，需多推送几次才能成功。</li>
+</ol>
 <h2 id="使用-divio-搭建">使用 Divio 搭建</h2>
+<h3 id="提醒">提醒</h3>
+<blockquote>
+<p>该容器我还在试用中，暂时不知道在运行过程中会不会休眠或其他问题</p>
+</blockquote>
 <p>该容器分为 <code>TEST</code> 和 <code>LIVE</code> 两部分，我们直接部署在 <code>LIVE</code> 中</p>
 <ol>
 <li>Fork <a class="link" href="https://github.com/Originat/qinglong-paas"  target="_blank" rel="noopener"
@@ -524,56 +593,6 @@
 		data-flex-basis="473px"
 	
 ></li>
-</ol>
-<h2 id="使用-railway-搭建">使用 Railway 搭建</h2>
-<h3 id="tip">Tip</h3>
-<blockquote>
-<p>从2022年8月1日起，Railway 调整了定价计划，免费用户一个月只能运行500小时</p>
-</blockquote>
-<ol>
-<li><a class="link" href="https://railway.app/?referralCode=Xh3DQG"  target="_blank" rel="noopener"
-    >注册Railway</a></li>
-<li>点击以下按钮直接部署使用即可<br>
-<a class="link" href="https://railway.app/new/template?template=https://github.com/Originat/qinglong-paas"  target="_blank" rel="noopener"
-    ><img src="https://www.railway.app/button.svg"
-	
-	
-	
-	loading="lazy"
-	
-		alt="Deploy on Railway"
-	
-	
-></a><br>
-在 <code>Variables</code> 添加关键字<code>PORT</code>，值为<code>5700</code><br>
-<img src="/p/qinglong-paas/Railway_1.png"
-	width="1132"
-	height="277"
-	srcset="/p/qinglong-paas/Railway_1_hu8f5bdde68a681edcd0a7a7d343d12b0b_28624_480x0_resize_box_3.png 480w, /p/qinglong-paas/Railway_1_hu8f5bdde68a681edcd0a7a7d343d12b0b_28624_1024x0_resize_box_3.png 1024w"
-	loading="lazy"
-	
-		alt=" "
-	
-	
-		class="gallery-image" 
-		data-flex-grow="408"
-		data-flex-basis="980px"
-	
-></li>
-</ol>
-<h2 id="使用-flyio-搭建">使用 Fly.io 搭建</h2>
-<h3 id="提示">提示</h3>
-<blockquote>
-<p>Fly.io 免费版并不能完整部署，因为Fly.io免费版是全时运行 3 个具有 256MB RAM 的共享 cpu-1x VM，单独一个都低于青龙面板所需的内存，需要添加256MB RAM才能完整运行，而添加则需要加钱。</p>
-</blockquote>
-<ol>
-<li>先到 <a class="link" href="https://fly.io/"  target="_blank" rel="noopener"
-    >Fly.io</a> 注册账号，<em><strong>注意：注册时要记得绑定信用卡，银联的就行</strong></em></li>
-<li>创建 fly 应用程序（app）：<code>fly launch</code></li>
-<li>下载 <a class="link" href="https://github.com/Originat/qinglong-paas/archive/refs/heads/main.zip"  target="_blank" rel="noopener"
-    >qinglong-paas</a> 代码</li>
-<li>解压后，找到 <code>fly.toml</code> 文件，修改 <code>app = &quot;qinglong&quot;</code> 为自己创建应用程序的名字</li>
-<li>在有 <code>fly.toml</code> 文件夹下，打开 cmd 命令界面，执行 <code>fly deploy</code>，这会应网络问题而失败，需多推送几次才能成功。</li>
 </ol>
 <blockquote>
 <p>如果想添加订阅功能可转到 <a class="link" href="../qinglonginstallation/" ><code>使用 VPS 搭建青龙面板</code></a> 查看</p>
@@ -958,7 +977,6 @@
     <li><a href="#前言">前言</a></li>
     <li><a href="#简介">简介</a></li>
     <li><a href="#注意">注意</a></li>
-    <li><a href="#使用-divio-搭建">使用 Divio 搭建</a></li>
     <li><a href="#使用-railway-搭建">使用 Railway 搭建</a>
       <ol>
         <li><a href="#tip">Tip</a></li>
@@ -967,6 +985,11 @@
     <li><a href="#使用-flyio-搭建">使用 Fly.io 搭建</a>
       <ol>
         <li><a href="#提示">提示</a></li>
+      </ol>
+    </li>
+    <li><a href="#使用-divio-搭建">使用 Divio 搭建</a>
+      <ol>
+        <li><a href="#提醒">提醒</a></li>
       </ol>
     </li>
     <li><a href="#参考">参考</a></li>
