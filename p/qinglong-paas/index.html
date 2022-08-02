@@ -405,7 +405,7 @@
 <ol>
 <li><a class="link" href="https://railway.app/?referralCode=Xh3DQG"  target="_blank" rel="noopener"
     >注册Railway</a></li>
-<li>点击以下按钮直接部署使用即可<br>
+<li>点击以下按钮直接部署，然后在 <code>Variables</code> 添加关键字<code>PORT</code>，值为<code>5700</code>
 <a class="link" href="https://railway.app/new/template?template=https://github.com/Originat/qinglong-paas"  target="_blank" rel="noopener"
     ><img src="https://www.railway.app/button.svg"
 	
@@ -417,7 +417,6 @@
 	
 	
 ></a><br>
-在 <code>Variables</code> 添加关键字<code>PORT</code>，值为<code>5700</code><br>
 <img src="/p/qinglong-paas/Railway_1.png"
 	width="1132"
 	height="277"
@@ -438,7 +437,10 @@
 <blockquote>
 <p>Fly.io 免费版并不能完整部署，因为Fly.io免费版是全时运行 3 个具有 256MB RAM 的共享 cpu-1x VM，单独一个都低于青龙面板所需的内存，需要添加256MB RAM才能完整运行，而添加则需要加钱。我使用一个月后发现5美元以下是不收取费用的，所以可以添加 256MB RAM 来完整部署青龙面板</p>
 </blockquote>
-<p>打开新建立的应用，点击左手边的 <code>Scale</code>，把 <code>Memory</code> 调为512M，然后点击 <code>Scale Now</code><br>
+<ol>
+<li>先到 <a class="link" href="https://fly.io/"  target="_blank" rel="noopener"
+    >Fly.io</a> 注册账号，<em><strong>注意：注册时要记得绑定信用卡，银联的就行</strong></em></li>
+<li>创建 fly 应用程序（app）：<code>fly launch</code>，创建成功后，在 Fly.io 网页打开新建立的应用，点击左手边的 <code>Scale</code>，把 <code>Memory</code> 调为512M，然后点击 <code>Scale Now</code>
 <img src="/p/qinglong-paas/fly.io_1.png"
 	width="989"
 	height="376"
@@ -452,15 +454,11 @@
 		data-flex-grow="263"
 		data-flex-basis="631px"
 	
-></p>
-<ol>
-<li>先到 <a class="link" href="https://fly.io/"  target="_blank" rel="noopener"
-    >Fly.io</a> 注册账号，<em><strong>注意：注册时要记得绑定信用卡，银联的就行</strong></em></li>
-<li>创建 fly 应用程序（app）：<code>fly launch</code></li>
+></li>
 <li>下载 <a class="link" href="https://github.com/Originat/qinglong-paas/archive/refs/heads/main.zip"  target="_blank" rel="noopener"
     >qinglong-paas</a> 代码</li>
 <li>解压后，找到 <code>fly.toml</code> 文件，修改 <code>app = &quot;qinglong&quot;</code> 为自己创建应用程序的名字</li>
-<li>在有 <code>fly.toml</code> 文件夹下，打开 cmd 命令界面，执行 <code>fly deploy</code>，这会应网络问题而失败，需多推送几次才能成功。</li>
+<li>在有 <code>fly.toml</code> 文件夹下，打开 cmd 命令界面，执行 <code>fly deploy</code>，这会应网络问题而失败，可能多推送几次才能成功。</li>
 </ol>
 <h2 id="使用-divio-搭建">使用 Divio 搭建</h2>
 <h3 id="提醒">提醒</h3>
@@ -518,7 +516,7 @@
 		data-flex-basis="960px"
 	
 ></li>
-<li>在第4步中选<code>CUSTOM</code>后的弹框中，把复制的 <code>SSH</code> 链接粘贴到 <code>REPOSITORY URL</code> 中,然后复制密钥
+<li>在第4步中选 <code>CUSTOM</code> 后的弹框中，把复制的 <code>SSH</code> 链接粘贴到 <code>REPOSITORY URL</code> 中,然后复制密钥
 <img src="/p/qinglong-paas/divio_4.png"
 	width="800"
 	height="355"
