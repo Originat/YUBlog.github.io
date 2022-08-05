@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='前言 因平时工作偶然会使用到PS修一下横幅的文字，每次我都会去搜索一下，感觉挺麻烦的，故想记录下来，方便查找自己使用过的方法。
+方法一 使用修补工具（也可以使用内容识别填充），每个字选择后拖动，位置不够，拖动一点后再拖动一点 输入你需要的文字，修改字体，字的颜色，调整到合适的大小 加粗字体五种方式：
+在字体的设置里，可以选择浑厚和平滑，这里都可以加粗文字，但效果不太明显 仿粗体，点击“切换字符和段落面板”，然后点击第一个T，就是仿粗体，字体就加粗了 复制图层的方法。就是复制文字图层，每复制一次，字体就会加粗一些，但是一定程度后就没效果了。这个方法的原理是这样的：每个字体的边缘都会有一些不清晰的像素。通过多图层的叠加。这些不清晰的像素的不透明度会越来越高，也就会越来越明显。但是这是有上限的，当所有不明显像素的不透明度都满了以后，再叠加也就没有用了 使用【图层样式】-【描边】来完成效果。双击文字图层，点击描边。大小自定义，可以加粗很多。内部外部也都可以，不过外部比内部粗一倍，可以根据效果来调整 使用滤镜来调整。这个方法首先要将文字图层栅格化，然后点击滤镜-其他-最小值，半径参数根据想要的文字粗细自定义 隐藏文字图层，然后另存为PSD格式文件格式 然后显示出文字图层，再找到滤镜-&amp;gt;扭曲-&amp;gt;置换，在弹框选择转换为智能对象，弹框中会出现水平比例、垂直比例等等，不需要修改，直接点击确定，接着选择刚刚保存的PSD文件,再点击打开，这是会发现文字会融入横幅的纹理中 打开滤镜-&amp;gt;杂色-&amp;gt;添加杂色，然后勾选单色和高斯分布，根据实际情况调整数量（斑点），接着确定（可后期修改） 找到滤镜-&amp;gt;模糊-&amp;gt;高斯模糊，数值调小一点（半径像素）（0.5左右） 打开混合选项，找到混合颜色带-&amp;gt;下一图层，把高光适当的还原一点（白色边），按住Alt键可以分离进行调整，调到适合的位置就完成了 可参考以下视频：
+参考 PS如何加粗字体？
+快速修改横幅上的文字，PS教程：实用且好玩的改字教程！'><title>使用PS快速修改横幅上的文字</title>
+
+<link rel='canonical' href='https://www.alltoone.eu.org/p/ps-quickly-change-text/'>
+
+<link rel="stylesheet" href="/scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css"><meta property='og:title' content='使用PS快速修改横幅上的文字'>
+<meta property='og:description' content='前言 因平时工作偶然会使用到PS修一下横幅的文字，每次我都会去搜索一下，感觉挺麻烦的，故想记录下来，方便查找自己使用过的方法。
+方法一 使用修补工具（也可以使用内容识别填充），每个字选择后拖动，位置不够，拖动一点后再拖动一点 输入你需要的文字，修改字体，字的颜色，调整到合适的大小 加粗字体五种方式：
+在字体的设置里，可以选择浑厚和平滑，这里都可以加粗文字，但效果不太明显 仿粗体，点击“切换字符和段落面板”，然后点击第一个T，就是仿粗体，字体就加粗了 复制图层的方法。就是复制文字图层，每复制一次，字体就会加粗一些，但是一定程度后就没效果了。这个方法的原理是这样的：每个字体的边缘都会有一些不清晰的像素。通过多图层的叠加。这些不清晰的像素的不透明度会越来越高，也就会越来越明显。但是这是有上限的，当所有不明显像素的不透明度都满了以后，再叠加也就没有用了 使用【图层样式】-【描边】来完成效果。双击文字图层，点击描边。大小自定义，可以加粗很多。内部外部也都可以，不过外部比内部粗一倍，可以根据效果来调整 使用滤镜来调整。这个方法首先要将文字图层栅格化，然后点击滤镜-其他-最小值，半径参数根据想要的文字粗细自定义 隐藏文字图层，然后另存为PSD格式文件格式 然后显示出文字图层，再找到滤镜-&amp;gt;扭曲-&amp;gt;置换，在弹框选择转换为智能对象，弹框中会出现水平比例、垂直比例等等，不需要修改，直接点击确定，接着选择刚刚保存的PSD文件,再点击打开，这是会发现文字会融入横幅的纹理中 打开滤镜-&amp;gt;杂色-&amp;gt;添加杂色，然后勾选单色和高斯分布，根据实际情况调整数量（斑点），接着确定（可后期修改） 找到滤镜-&amp;gt;模糊-&amp;gt;高斯模糊，数值调小一点（半径像素）（0.5左右） 打开混合选项，找到混合颜色带-&amp;gt;下一图层，把高光适当的还原一点（白色边），按住Alt键可以分离进行调整，调到适合的位置就完成了 可参考以下视频：
+参考 PS如何加粗字体？
+快速修改横幅上的文字，PS教程：实用且好玩的改字教程！'>
+<meta property='og:url' content='https://www.alltoone.eu.org/p/ps-quickly-change-text/'>
+<meta property='og:site_name' content='静语忆昔'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PS' /><meta property='article:published_time' content='2022-08-05T00:20:00&#43;08:00'/><meta property='article:modified_time' content='2022-08-05T00:20:00&#43;08:00'/>
+<meta name="twitter:title" content="使用PS快速修改横幅上的文字">
+<meta name="twitter:description" content="前言 因平时工作偶然会使用到PS修一下横幅的文字，每次我都会去搜索一下，感觉挺麻烦的，故想记录下来，方便查找自己使用过的方法。
+方法一 使用修补工具（也可以使用内容识别填充），每个字选择后拖动，位置不够，拖动一点后再拖动一点 输入你需要的文字，修改字体，字的颜色，调整到合适的大小 加粗字体五种方式：
+在字体的设置里，可以选择浑厚和平滑，这里都可以加粗文字，但效果不太明显 仿粗体，点击“切换字符和段落面板”，然后点击第一个T，就是仿粗体，字体就加粗了 复制图层的方法。就是复制文字图层，每复制一次，字体就会加粗一些，但是一定程度后就没效果了。这个方法的原理是这样的：每个字体的边缘都会有一些不清晰的像素。通过多图层的叠加。这些不清晰的像素的不透明度会越来越高，也就会越来越明显。但是这是有上限的，当所有不明显像素的不透明度都满了以后，再叠加也就没有用了 使用【图层样式】-【描边】来完成效果。双击文字图层，点击描边。大小自定义，可以加粗很多。内部外部也都可以，不过外部比内部粗一倍，可以根据效果来调整 使用滤镜来调整。这个方法首先要将文字图层栅格化，然后点击滤镜-其他-最小值，半径参数根据想要的文字粗细自定义 隐藏文字图层，然后另存为PSD格式文件格式 然后显示出文字图层，再找到滤镜-&amp;gt;扭曲-&amp;gt;置换，在弹框选择转换为智能对象，弹框中会出现水平比例、垂直比例等等，不需要修改，直接点击确定，接着选择刚刚保存的PSD文件,再点击打开，这是会发现文字会融入横幅的纹理中 打开滤镜-&amp;gt;杂色-&amp;gt;添加杂色，然后勾选单色和高斯分布，根据实际情况调整数量（斑点），接着确定（可后期修改） 找到滤镜-&amp;gt;模糊-&amp;gt;高斯模糊，数值调小一点（半径像素）（0.5左右） 打开混合选项，找到混合颜色带-&amp;gt;下一图层，把高光适当的还原一点（白色边），按住Alt键可以分离进行调整，调到适合的位置就完成了 可参考以下视频：
+参考 PS如何加粗字体？
+快速修改横幅上的文字，PS教程：实用且好玩的改字教程！"><script async defer data-website-id="b4c53d76-ec3f-4534-9481-f3d1b73bf451" src="https://umami-seven-plum.vercel.app/yublog.js"></script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu66a60ebc56668b64edd7b3b7f8e485ac_966183_300x0_resize_box_3.png" width="300"
+                            height="298" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">静语忆昔</a></h1>
+            <h2 class="site-description">你比想象の，更有力量!</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Originat'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.alienergy.eu.org/index.xml'
+                        target="_blank"
+                        title="Rss"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://t.me/everynightreading'
+                        target="_blank"
+                        title="Telegram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%AC%94%E8%AE%B0/" >
+                笔记
+            </a>
+        
+            <a href="/categories/%E6%A8%AA%E5%B9%85/" >
+                横幅
+            </a>
+        
+            <a href="/categories/ps/" >
+                PS
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ps-quickly-change-text/">使用PS快速修改横幅上的文字</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 05, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="前言">前言</h2>
+<p>因平时工作偶然会使用到PS修一下横幅的文字，每次我都会去搜索一下，感觉挺麻烦的，故想记录下来，方便查找自己使用过的方法。</p>
+<h2 id="方法一">方法一</h2>
+<ol>
+<li>使用修补工具（也可以使用内容识别填充），每个字选择后拖动，位置不够，拖动一点后再拖动一点</li>
+<li>输入你需要的文字，修改字体，字的颜色，调整到合适的大小
+<blockquote>
+<p>加粗字体五种方式：</p>
+<ol>
+<li>在字体的设置里，可以选择浑厚和平滑，这里都可以加粗文字，但效果不太明显</li>
+<li>仿粗体，点击“切换字符和段落面板”，然后点击第一个T，就是仿粗体，字体就加粗了</li>
+<li>复制图层的方法。就是复制文字图层，每复制一次，字体就会加粗一些，但是一定程度后就没效果了。这个方法的原理是这样的：每个字体的边缘都会有一些不清晰的像素。通过多图层的叠加。这些不清晰的像素的不透明度会越来越高，也就会越来越明显。但是这是有上限的，当所有不明显像素的不透明度都满了以后，再叠加也就没有用了</li>
+<li>使用【图层样式】-【描边】来完成效果。双击文字图层，点击描边。大小自定义，可以加粗很多。内部外部也都可以，不过外部比内部粗一倍，可以根据效果来调整</li>
+<li>使用滤镜来调整。这个方法首先要将文字图层栅格化，然后点击滤镜-其他-最小值，半径参数根据想要的文字粗细自定义</li>
+</ol>
+</blockquote>
+</li>
+<li>隐藏文字图层，然后另存为PSD格式文件格式</li>
+<li>然后显示出文字图层，再找到<code>滤镜</code>-&gt;<code>扭曲</code>-&gt;<code>置换</code>，在弹框选择<code>转换为智能对象</code>，弹框中会出现水平比例、垂直比例等等，不需要修改，直接点击确定，接着选择刚刚保存的PSD文件,再点击打开，这是会发现文字会融入横幅的纹理中</li>
+<li>打开<code>滤镜</code>-&gt;<code>杂色</code>-&gt;<code>添加杂色</code>，然后勾选<code>单色</code>和<code>高斯分布</code>，根据实际情况调整<code>数量</code>（斑点），接着确定（可后期修改）</li>
+<li>找到<code>滤镜</code>-&gt;<code>模糊</code>-&gt;<code>高斯模糊</code>，数值调小一点（半径像素）（0.5左右）</li>
+<li>打开混合选项，找到<code>混合颜色带</code>-&gt;<code>下一图层</code>，把高光适当的还原一点（白色边），按住Alt键可以分离进行调整，调到适合的位置就完成了</li>
+</ol>
+<p>可参考以下视频：</p>
+<!-- raw HTML omitted -->
+
+
+
+
+
+
+    
+
+
+<div class="video-wrapper">
+    <iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;high_quality=1&amp;page=1&bvid=BV1qi4y1E7Zv"
+            scrolling="no"
+            frameborder="no"
+            framespacing="0"
+            allowfullscreen="true"
+    >
+    </iframe>
+</div>
+
+<h2 id="参考">参考</h2>
+<ol>
+<li>
+<p><a class="link" href="https://huke88.com/baike/a23922/"  target="_blank" rel="noopener"
+    >PS如何加粗字体？</a></p>
+</li>
+<li>
+<p><a class="link" href="https://www.youtube.com/watch?v=0I3gG8rA0Fs&amp;t=5s"  target="_blank" rel="noopener"
+    >快速修改横幅上的文字，PS教程：实用且好玩的改字教程！</a></p>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ps/">PS</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/qinglong-paas/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用 PAAS 搭建青龙面板</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/arpt-bot-fly.io/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用 Fly.io 搭建 ARPT-Bot</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/alist.flyio.alwaysdata/">
+        
+        
+            <div class="article-image">
+                <img src="/p/alist.flyio.alwaysdata/alist_1.085f1b3f156ef1aac0fa1f3148817eeb_hue451d6ba0d494bc0fc4bf142b88156b3_1811362_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 使用免费 PAAS 搭建 Alist"
+                        data-key="alist.flyio.alwaysdata" 
+                        data-hash="md5-CF8bPxVu8arA&#43;h8xSIF&#43;6w==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用免费 PAAS 搭建 Alist</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/qinglonginstallation/">
+        
+        
+            <div class="article-image">
+                <img src="/p/qinglonginstallation/qinglong_logo.a4e9bc395d1df862f7203ffed88fc3c9_hue200e384111fae663ead57375b8267e6_34385_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 使用 VPS 搭建青龙面板"
+                        data-key="qinglonginstallation" 
+                        data-hash="md5-pOm8OV0d&#43;GL3ID/&#43;2I/DyQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用 VPS 搭建青龙面板</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/arpt-bot/">
+        
+        
+            <div class="article-image">
+                <img src="/p/arpt-bot/arpt-bot.510884db9e3d3fea13959279dee65b73_hubf92167c8ef5014ddf3c863fd27ea34e_43585_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 使用VPS搭建ARPT-Bot"
+                        data-key="arpt-bot" 
+                        data-hash="md5-UQiE2549P&#43;oTlZJ53uZbcw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用VPS搭建ARPT-Bot</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div id="cusdis_thread"
+  data-host="https://cusdis-e95vfq1tq-originat.vercel.app"
+  data-app-id="35a74cb5-fde6-4262-b49b-fdf72264bfcd"
+  data-page-id="0b6fa9c3081d2af33717f918c9e87580"
+  data-page-url="https://www.alltoone.eu.org/p/ps-quickly-change-text/"
+  data-page-title="使用PS快速修改横幅上的文字"
+></div>
+<script defer src="https://cusdis-e95vfq1tq-originat.vercel.app/js/widget/lang/zh-cn.js"></script>
+<script async defer src="https://cusdis-e95vfq1tq-originat.vercel.app/js/cusdis.es.js"></script>
+
+
+<script>
+    function setCusdisTheme(theme) {
+        let cusdis = document.querySelector('#cusdis_thread iframe');
+        if (cusdis) {
+            window.CUSDIS.setTheme(theme)
+        }
+    }
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        setCusdisTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 静语忆昔
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.12.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+
+    
+    <section class="powerby"> 
+        
+        
+        
+            
+            <span id="sitetime"></span><span id="sitetime" style="color: #b89c72;"></span>
+            <script language=javascript>
+                function siteTime(){
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth()+1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    
+
+                    var t1 = Date.UTC(2022,7,11,02,30,0); 
+                    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                    var diff = t2-t1;
+                    var diffYears = Math.floor(diff/years);
+                    var diffDays = Math.floor((diff/days)-diffYears*365);
+                    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+                    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+                    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+                    document.getElementById("sitetime").innerHTML=diffYears+" 年 "+diffDays+" 天 "+diffHours+" 时 "+diffMinutes+" 分 "+diffSeconds+" 秒";
+                }
+                siteTime();
+            </script>
+            <style>
+                #sitetime {
+                    animation: change 50s infinite;
+                    font-weight: 800;
+                }
+            
+                @keyframes change {
+                    0% {
+                        color: #85bfe5;
+                    }
+            
+                    25% {
+                        color: #a08c8c;
+                    }
+            
+                    50% {
+                        color: #746c50;
+                    }
+            
+                    75% {
+                        color: #ddc2ee;
+                    }
+            
+                    100% {
+                        color: #8c98a2;
+                    }
+                }
+            </style>
+        
+        
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#方法一">方法一</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
