@@ -328,7 +328,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 1 分钟
                 </time>
             </div>
         
@@ -348,239 +348,12 @@
     ><code>Alist</code></a>：一款支持多种存储的目录文件列表程序，支持 web 浏览与 webdav，后端基于gin，前端使用react。演示地址：<a class="link" href="https://alist.nn.ci"  target="_blank" rel="noopener"
     >https://alist.nn.ci</a></p>
 </blockquote>
-<h2 id="使用-flyio-部署">使用 Fly.io 部署</h2>
-<h3 id="使用-github-actions-自动部署">使用 GitHub Actions 自动部署</h3>
-<ol>
-<li>先到 <a class="link" href="https://fly.io/"  target="_blank" rel="noopener"
-    >Fly.io</a> 注册账号，<em><strong>注意：注册时要记得绑定信用卡，银联的就行</strong></em></li>
-<li>创建 fly 应用程序（app）：<code>fly launch</code>   （选择 ams (Amsterdam,Netherlands)）
-<img src="/fly.io_1.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></li>
-<li>创建 fly 卷（volume）：<code>flyctl volumes create data --region ams --size 1</code>
-<img src="/fly.io_2.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></li>
-<li>Fork <a class="link" href="https://github.com/Originat/alist-fly.io"  target="_blank" rel="noopener"
-    >alist-fly.io</a> 后，在 Settings -&gt; Secrets -&gt; Actions 中增加 <code>FLY_API_TOKEN</code>、<code>APP_NAME</code> 安全字段</li>
-</ol>
-<ul>
-<li>FLY_API_TOKEN - Fly API 接口 Token 值，可访问 <a class="link" href="https://web.fly.io/user/personal_access_tokens"  target="_blank" rel="noopener"
-    >https://web.fly.io/user/personal_access_tokens</a> 或在本地执行 <code>flyctl auth token</code> 查看</li>
-<li>APP_NAME - 应用名称，注意此名称全局唯一</li>
-</ul>
-<p><img src="/alist_2.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></p>
-<p><img src="/alist_3.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></p>
-<p>设置好后，代码自行触发部署，已设置每月十八号八点（UTC）自动部署，可在 <code>.github/workflows/main.yml</code> 中进行修改。</p>
-<p>初始密码在 Fly.io 的监控日志中进行查看，Dashboard -&gt; personal -&gt; <code>应用程序的名字</code> -&gt; Monitoring</p>
-<h3 id="手动推送部署">手动推送部署</h3>
-<ol>
-<li>先到 <a class="link" href="https://fly.io/"  target="_blank" rel="noopener"
-    >Fly.io</a> 注册账号，<em><strong>注意：注册时要记得绑定信用卡，银联的就行</strong></em></li>
-<li>在电脑 <code>cmd</code> 中安装 <a class="link" href="https://fly.io/docs/getting-started/installing-flyctl/"  target="_blank" rel="noopener"
-    >Fly.io</a>，Windows电脑安装脚本： <code>iwr https://fly.io/install.ps1 -useb | iex</code> ，安装后运行<code>flyctl auth login</code>,在跳出的浏览器中进行登录授权，然后运行 <code>flyctl launch</code> 来创建、配置和部署新应用程序,记住创建应用程序的名字</li>
-<li>下载 <a class="link" href="https://github.com/Originat/alist-fly.io/archive/refs/heads/main.zip"  target="_blank" rel="noopener"
-    >alist-fly.io</a></li>
-<li>解压后，找到 <code>fly.toml</code> 文件，修改 <code>app = &quot;alist&quot;</code> 为自己创建应用程序的名字</li>
-<li>在有 <code>fly.toml</code> 文件夹下，打开 cmd 命令界面，执行 <code>fly deploy</code>，这会应网络问题而失败，需多推送几次才能成功。</li>
-<li>初始密码在 Fly.io 的监控日志中进行查看，Dashboard -&gt; personal -&gt; <code>应用程序的名字</code> -&gt; Monitoring</li>
-</ol>
-<p><img src="/alist_4.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></p>
-<p><img src="/alist_5.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></p>
-<h2 id="使用-alwaysdata-部署">使用 alwaysdata 部署</h2>
-<blockquote>
-<p>注意，这家有随意删号倾向，或者说管理特别严格，很容易被警告或者删号。感觉就是看心情……请停止使用。</p>
-</blockquote>
-<p>注册地址：<a class="link" href="https://www.alwaysdata.com/"  target="_blank" rel="noopener"
-    >https://www.alwaysdata.com/</a><br>
-Tip: 中国IP已拒绝注册，挂代理注册要选择干净的IP，否则注册页面要求验证信用卡。</p>
-<p>登录后台后，可修改为中文界面</p>
-<p><img src="/alist_6.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></p>
-<p>创建程序
-注册成功以后，在跳转的页面弹窗中按要求填写应用名称，密码（以后管理所用的<code>通用密码</code>）。只能选100Mb的，其他收费。</p>
-<h3 id="更改程序类型">更改程序类型</h3>
-<p>Web —&gt; Sites —&gt; 编辑 —&gt; Configuration，type 改成 user program<br>
-把 <code>Command</code> 改为 ./alist</p>
-<p><img src="/alist_7.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></p>
-<h3 id="设置-ssh">设置 SSH</h3>
-<p>点击如图设置按钮</p>
-<p><img src="/alist_8.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></p>
-<p>勾选允许密码登录SSH，这个密码是刚才设置的 <code>通用密码</code> ：</p>
-<p><img src="/alist_9.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></p>
-<h3 id="连接-ssh">连接 SSH</h3>
-<p>连接SSH，可以网页连接，也可以SSH客户端连接。账号是你前面设置的应用名称，密码是你刚才设置的 <code>通用密码</code> ，端口是默认端口 ( <code>22</code> ) 。地址就在那个SSH管理界面上端，网页连接可以直接点击那个 WEB ：</p>
-<p><img src="/alist_10.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></p>
-<h3 id="安装alist">安装alist</h3>
-<p>连接上 ssh 以后，按照正常方法安装就行了。不过，alwaydata只开放了一个端口：8100 ，对外的 80 端口只展示内网的 8100 端口 ( 这意味着只能使用 sqlite3 的数据库 ) 。所以，需要改一下alist的配置文件。</p>
-<ol>
-<li>
-<p>输入安装命令</p>
-<blockquote>
-<p>#下载 Alist<br>
-<code>wget https://github.com/Xhofe/alist/releases/download/v2.6.1/alist-linux-amd64.tar.gz</code><br>
-#解压<br>
-<code>tar -zxvf alist-linux-amd64.tar.gz</code><br>
-#重命名（和在site填写的./alist是一致的）<br>
-<code>mv alist-linux-amd64 alist</code></p>
-</blockquote>
-</li>
-<li>
-<p>修改配置文件</p>
-<blockquote>
-<p>#第一次在终端里运行（和在site填写的./alist是一致的）<br>
-<code>./alist</code><br>
-#会自动生成配置文件夹data，还有<code>记住自动生成的密码</code><br>
-#修改配置文件<br>
-<code>vim data/config.json</code><br>
-#默认端口是5244，需要修改成8100<br>
-<img src="/alist_11.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-><br>
-Tip:<br>
-简单说一下怎么用 vim，直接输入最后的 vim 命令后，输入 <code>i</code> 进入编辑模式，这时候才可以改文件内容。按 <code>esc</code> 退出编辑模式，退出以后，输入 <code>:wq</code> 进行保存并强制退出。</p>
-</blockquote>
-</li>
-<li>
-<p>然后重新启动网页即可</p>
-</li>
-</ol>
-<p><img src="/alist_12.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></p>
-<h3 id="配置-ssl">配置 SSL</h3>
-<p><img src="/alist_13.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt=" "
-	
-	
-></p>
-<p>打开网页，参照 <a class="link" href="https://alist-doc.nn.ci/docs/intro"  target="_blank" rel="noopener"
-    >Alist Doc</a> 文档进行添加网盘</p>
 <h2 id="参考">参考</h2>
 <ol>
-<li><a class="link" href="https://alist-doc.nn.ci/docs/intro"  target="_blank" rel="noopener"
-    >Alist Doc</a></li>
-<li><a class="link" href="https://github.com/York618/alist-flyio"  target="_blank" rel="noopener"
-    >York618/alist-flyio</a></li>
-<li><a class="link" href="https://github.com/Originat/alist-fly.io"  target="_blank" rel="noopener"
-    >Originat/alist-fly.io</a></li>
-<li><a class="link" href="https://github.com/Misakaou/alist-fly.io"  target="_blank" rel="noopener"
-    >Misakaou/alist-fly.io</a></li>
-<li><a class="link" href="https://www.qqvps.com/d/1054"  target="_blank" rel="noopener"
-    >利用永久免费的alwaydata搭建alist网盘列表</a></li>
+<li><a class="link" href="https://www.pseudoyu.com/zh/2022/03/24/free_blog_deploy_using_hugo_and_cusdis/"  target="_blank" rel="noopener"
+    >免费的个人博客系统搭建及部署解决方案（Hugo + GitHub Pages + Cusdis）</a></li>
+<li><a class="link" href="https://www.pseudoyu.com/zh/2022/05/21/free_blog_analysis_using_umami_vercel_and_heroku/"  target="_blank" rel="noopener"
+    >从零开始搭建一个免费的个人博客数据统计系统（umami + Vercel + Heroku）</a></li>
 </ol>
 
 </section>
@@ -929,21 +702,6 @@ Tip:<br>
             <nav id="TableOfContents">
   <ol>
     <li><a href="#简介">简介</a></li>
-    <li><a href="#使用-flyio-部署">使用 Fly.io 部署</a>
-      <ol>
-        <li><a href="#使用-github-actions-自动部署">使用 GitHub Actions 自动部署</a></li>
-        <li><a href="#手动推送部署">手动推送部署</a></li>
-      </ol>
-    </li>
-    <li><a href="#使用-alwaysdata-部署">使用 alwaysdata 部署</a>
-      <ol>
-        <li><a href="#更改程序类型">更改程序类型</a></li>
-        <li><a href="#设置-ssh">设置 SSH</a></li>
-        <li><a href="#连接-ssh">连接 SSH</a></li>
-        <li><a href="#安装alist">安装alist</a></li>
-        <li><a href="#配置-ssl">配置 SSL</a></li>
-      </ol>
-    </li>
     <li><a href="#参考">参考</a></li>
   </ol>
 </nav>
