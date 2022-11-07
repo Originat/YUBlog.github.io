@@ -6,13 +6,26 @@
         <description>Recent content in Posts on 静语忆昔</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 05 Aug 2022 00:20:00 +0800</lastBuildDate><atom:link href="https://www.alltoone.eu.org/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 10 Oct 2022 01:01:00 +0800</lastBuildDate><atom:link href="https://www.alltoone.eu.org/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用 CloudFlare Pages 进行反代</title>
+        <link>https://www.alltoone.eu.org/p/cloudflarepages-fandaili/</link>
+        <pubDate>Mon, 10 Oct 2022 01:01:00 +0800</pubDate>
+        
+        <guid>https://www.alltoone.eu.org/p/cloudflarepages-fandaili/</guid>
+        <description>简介 Cloudflare Pages 是Cloudflare推出的静态网站托管服务，功能和 Github Pages 相似，可以存放静态网页，还可以直接部署前端项目。如果你的网站只是静态博客或帮助文档的话，可以完全不需要购买服务器。直接部署到 Cloudflare Pages 服务上。
+准备材料 Github/ GitLab账号 CloudFlare 账号
+CloudFlare Pages 反代步骤 在 Github 上创建新项目并新建 &amp;ldquo;_worker.js&amp;rdquo; 名字的文件 把 CloudFlare Pages 反代代码写入文件中（代码类型在文章后面，自行选择），把文件中的 app.example.com 换成反代地址
+在 CloudFlare 上找到 &amp;ldquo;Pages&amp;rdquo; 并创建项目 在 Github 账号上选择刚创建的项目 填入需要的名称，其他设置默认 显示成功即可 进行自定义域名，按 &amp;ldquo;继续处理项目&amp;rdquo; 点击 &amp;ldquo;自定义域&amp;rdquo; 填写自己的域名 提示：该域名需先添加到 CloudFlare 中
+CloudFlare Pages 反代代码参考 CloudFlare Pages 一网站反代代码 1 2 3 4 5 6 7 8 9 10 11 export default { async fetch(request, env) { let url = new URL(request.</description>
+        </item>
+        <item>
         <title>使用PS快速修改横幅上的文字</title>
         <link>https://www.alltoone.eu.org/p/ps-quickly-change-text/</link>
         <pubDate>Fri, 05 Aug 2022 00:20:00 +0800</pubDate>
         
         <guid>https://www.alltoone.eu.org/p/ps-quickly-change-text/</guid>
         <description>前言 因平时工作偶然会使用到PS修一下横幅的文字，每次我都会去搜索一下，感觉挺麻烦的，故想记录下来，方便查找自己使用过的方法。
+使用技巧 如果想使用快捷键（Ctrl+S）存储图片为psd文件格式，只有一个图层时需要先解锁图层，才能使用快捷键，不然就在文件-&amp;gt;存储为中存储为psd文件格式。
 方法一 使用修补工具（也可以使用内容识别填充），每个字选择后拖动，位置不够，拖动一点后再拖动一点 输入你需要的文字，修改字体，字的颜色，调整到合适的大小 加粗字体五种方式：
 在字体的设置里，可以选择浑厚和平滑，这里都可以加粗文字，但效果不太明显 仿粗体，点击“切换字符和段落面板”，然后点击第一个T，就是仿粗体，字体就加粗了 复制图层的方法。就是复制文字图层，每复制一次，字体就会加粗一些，但是一定程度后就没效果了。这个方法的原理是这样的：每个字体的边缘都会有一些不清晰的像素。通过多图层的叠加。这些不清晰的像素的不透明度会越来越高，也就会越来越明显。但是这是有上限的，当所有不明显像素的不透明度都满了以后，再叠加也就没有用了 使用【图层样式】-【描边】来完成效果。双击文字图层，点击描边。大小自定义，可以加粗很多。内部外部也都可以，不过外部比内部粗一倍，可以根据效果来调整 使用滤镜来调整。这个方法首先要将文字图层栅格化，然后点击滤镜-其他-最小值，半径参数根据想要的文字粗细自定义 隐藏文字图层，然后另存为PSD格式文件格式 然后显示出文字图层，再找到滤镜-&amp;gt;扭曲-&amp;gt;置换，在弹框选择转换为智能对象，弹框中会出现水平比例、垂直比例等等，不需要修改，直接点击确定，接着选择刚刚保存的PSD文件,再点击打开，这是会发现文字会融入横幅的纹理中 打开滤镜-&amp;gt;杂色-&amp;gt;添加杂色，然后勾选单色和高斯分布，根据实际情况调整数量（斑点），接着确定（可后期修改） 找到滤镜-&amp;gt;模糊-&amp;gt;高斯模糊，数值调小一点（半径像素）（0.5左右） 打开混合选项，找到混合颜色带-&amp;gt;下一图层，把高光适当的还原一点（白色边），按住Alt键可以分离进行调整，调到适合的位置就完成了 可参考以下视频：
 参考 PS如何加粗字体？
@@ -30,7 +43,7 @@
 注意 因不同的 PAAS 开放的端口不同（一般都会开放80与443），所以在某些容器中并不能使用傻妞等服务
 使用 Railway 搭建 Tip 从2022年8月1日起，Railway 调整了定价计划，在入门计划中，Railway 将帐户限制为500小时的正常运行时间，使用信用卡验证后，升级为开发者计划，每月 5 美元的信用额度不再附带执行限制
 注册Railway 点击以下按钮直接部署，然后在 Variables 添加关键字PORT，值为5700 使用 Fly.io 搭建 提示 Fly.io 免费版并不能完整部署，因为Fly.io免费版是全时运行 3 个具有 256MB RAM 的共享 cpu-1x VM，单独一个都低于青龙面板所需的内存，需要添加256MB RAM才能完整运行，而添加则需要加钱。我使用一个月后发现5美元以下是不收取费用的，所以可以添加 256MB RAM 来完整部署青龙面板
-先到 Fly.io 注册账号，注意：注册时要记得绑定信用卡，银联的就行 创建 fly 应用程序（app）：fly launch，创建成功后，在 Fly.io 网页打开新建立的应用，点击左手边的 Scale，把 Memory 调为512M，然后点击 Scale Now 下载 qinglong-paas 代码 解压后，找到 fly.toml 文件，修改 app = &amp;quot;qinglong&amp;quot; 为自己创建应用程序的名字 在有 fly.toml 文件夹下，打开 cmd 命令界面，执行 fly deploy，这会应网络问题而失败，可能多推送几次才能成功。 使用 Divio 搭建 提醒 该容器的免费计划中，项目在不活动 30 分钟后会睡眠</description>
+先到 Fly.io 注册账号，注意：注册时要记得绑定信用卡，银联的就行 创建 fly 应用程序（app）：flyctl launch，创建成功后，在 Fly.io 网页打开新建立的应用，点击左手边的 Scale，把 Memory 调为512M，然后点击 Scale Now 下载 qinglong-paas 代码 解压后，找到 fly.toml 文件，修改 app = &amp;quot;qinglong&amp;quot; 为自己创建应用程序的名字 在有 fly.toml 文件夹下，打开 cmd 命令界面，执行 flyctl deploy，这会应网络问题而失败，可能多推送几次才能成功。 使用 Divio 搭建 提醒 该容器的免费计划中，项目在不活动 30 分钟后会睡眠</description>
         </item>
         <item>
         <title>使用 Fly.io 搭建 ARPT-Bot</title>
@@ -44,12 +57,12 @@
         </item>
         <item>
         <title>使用免费 PAAS 搭建 Alist</title>
-        <link>https://www.alltoone.eu.org/p/alist.flyio.alwaysdata/</link>
+        <link>https://www.alltoone.eu.org/p/alist.flyio.alwaysdata.render/</link>
         <pubDate>Wed, 20 Jul 2022 23:20:00 +0800</pubDate>
         
-        <guid>https://www.alltoone.eu.org/p/alist.flyio.alwaysdata/</guid>
-        <description>&lt;img src="https://www.alltoone.eu.org/p/alist.flyio.alwaysdata/alist_1.png" alt="Featured image of post 使用免费 PAAS 搭建 Alist" /&gt;简介 Alist：一款支持多种存储的目录文件列表程序，支持 web 浏览与 webdav，后端基于gin，前端使用react。演示地址：https://alist.nn.ci
-使用 Fly.io 部署 使用 GitHub Actions 自动部署 先到 Fly.io 注册账号，注意：注册时要记得绑定信用卡，银联的就行 创建 fly 应用程序（app）：fly launch （选择 ams (Amsterdam,Netherlands)） 创建 fly 卷（volume）：flyctl volumes create data --region ams --size 1 Fork alist-fly.io 后，在 Settings -&amp;gt; Secrets -&amp;gt; Actions 中增加 FLY_API_TOKEN、APP_NAME 安全字段 FLY_API_TOKEN - Fly API 接口 Token 值，可访问 https://web.fly.io/user/personal_access_tokens 或在本地执行 flyctl auth token 查看 APP_NAME - 应用名称，注意此名称全局唯一 设置好后，代码自行触发部署，已设置每月十八号八点（UTC）自动部署，可在 .github/workflows/main.yml 中进行修改。
+        <guid>https://www.alltoone.eu.org/p/alist.flyio.alwaysdata.render/</guid>
+        <description>&lt;img src="https://www.alltoone.eu.org/p/alist.flyio.alwaysdata.render/alist_1.png" alt="Featured image of post 使用免费 PAAS 搭建 Alist" /&gt;简介 Alist：一款支持多种存储的目录文件列表程序，支持 web 浏览与 webdav，后端基于gin，前端使用react。演示地址：https://alist.nn.ci
+使用 Fly.io 部署 使用 GitHub Actions 自动部署 先到 Fly.io 注册账号，注意：注册时要记得绑定信用卡，银联的就行 创建 fly 应用程序（app）：flyctl launch （选择 ams (Amsterdam,Netherlands)） 创建 fly 卷（volume）：flyctl volumes create data --region ams --size 1 Fork alist-fly.io 后，在 Settings -&amp;gt; Secrets -&amp;gt; Actions 中增加 FLY_API_TOKEN、APP_NAME 安全字段 FLY_API_TOKEN - Fly API 接口 Token 值，可访问 https://web.fly.io/user/personal_access_tokens 或在本地执行 flyctl auth token 查看 APP_NAME - 应用名称，注意此名称全局唯一 设置好后，代码自行触发部署，已设置每月十八号八点（UTC）自动部署，可在 .github/workflows/main.yml 中进行修改。
 初始密码在 Fly.io 的监控日志中进行查看，Dashboard -&amp;gt; personal -&amp;gt; 应用程序的名字 -&amp;gt; Monitoring</description>
         </item>
         <item>

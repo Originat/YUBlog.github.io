@@ -18,7 +18,7 @@
 注意 因不同的 PAAS 开放的端口不同（一般都会开放80与443），所以在某些容器中并不能使用傻妞等服务
 使用 Railway 搭建 Tip 从2022年8月1日起，Railway 调整了定价计划，在入门计划中，Railway 将帐户限制为500小时的正常运行时间，使用信用卡验证后，升级为开发者计划，每月 5 美元的信用额度不再附带执行限制
 注册Railway 点击以下按钮直接部署，然后在 Variables 添加关键字PORT，值为5700 使用 Fly.io 搭建 提示 Fly.io 免费版并不能完整部署，因为Fly.io免费版是全时运行 3 个具有 256MB RAM 的共享 cpu-1x VM，单独一个都低于青龙面板所需的内存，需要添加256MB RAM才能完整运行，而添加则需要加钱。我使用一个月后发现5美元以下是不收取费用的，所以可以添加 256MB RAM 来完整部署青龙面板
-先到 Fly.io 注册账号，注意：注册时要记得绑定信用卡，银联的就行 创建 fly 应用程序（app）：fly launch，创建成功后，在 Fly.io 网页打开新建立的应用，点击左手边的 Scale，把 Memory 调为512M，然后点击 Scale Now 下载 qinglong-paas 代码 解压后，找到 fly.toml 文件，修改 app = &amp;quot;qinglong&amp;quot; 为自己创建应用程序的名字 在有 fly.toml 文件夹下，打开 cmd 命令界面，执行 fly deploy，这会应网络问题而失败，可能多推送几次才能成功。 使用 Divio 搭建 提醒 该容器的免费计划中，项目在不活动 30 分钟后会睡眠</description>
+先到 Fly.io 注册账号，注意：注册时要记得绑定信用卡，银联的就行 创建 fly 应用程序（app）：flyctl launch，创建成功后，在 Fly.io 网页打开新建立的应用，点击左手边的 Scale，把 Memory 调为512M，然后点击 Scale Now 下载 qinglong-paas 代码 解压后，找到 fly.toml 文件，修改 app = &amp;quot;qinglong&amp;quot; 为自己创建应用程序的名字 在有 fly.toml 文件夹下，打开 cmd 命令界面，执行 flyctl deploy，这会应网络问题而失败，可能多推送几次才能成功。 使用 Divio 搭建 提醒 该容器的免费计划中，项目在不活动 30 分钟后会睡眠</description>
         </item>
         
     </channel>

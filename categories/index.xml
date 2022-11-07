@@ -6,20 +6,36 @@
         <description>Recent content in Categories on 静语忆昔</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 05 Aug 2022 00:20:00 +0800</lastBuildDate><atom:link href="https://www.alltoone.eu.org/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>PS</title>
-        <link>https://www.alltoone.eu.org/categories/ps/</link>
-        <pubDate>Fri, 05 Aug 2022 00:20:00 +0800</pubDate>
+        <lastBuildDate>Mon, 10 Oct 2022 01:01:00 +0800</lastBuildDate><atom:link href="https://www.alltoone.eu.org/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>CloudFlare</title>
+        <link>https://www.alltoone.eu.org/categories/cloudflare/</link>
+        <pubDate>Mon, 10 Oct 2022 01:01:00 +0800</pubDate>
         
-        <guid>https://www.alltoone.eu.org/categories/ps/</guid>
+        <guid>https://www.alltoone.eu.org/categories/cloudflare/</guid>
         <description></description>
         </item>
         <item>
         <title>笔记</title>
         <link>https://www.alltoone.eu.org/categories/%E7%AC%94%E8%AE%B0/</link>
-        <pubDate>Fri, 05 Aug 2022 00:20:00 +0800</pubDate>
+        <pubDate>Mon, 10 Oct 2022 01:01:00 +0800</pubDate>
         
         <guid>https://www.alltoone.eu.org/categories/%E7%AC%94%E8%AE%B0/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>反代理</title>
+        <link>https://www.alltoone.eu.org/categories/%E5%8F%8D%E4%BB%A3%E7%90%86/</link>
+        <pubDate>Mon, 10 Oct 2022 01:01:00 +0800</pubDate>
+        
+        <guid>https://www.alltoone.eu.org/categories/%E5%8F%8D%E4%BB%A3%E7%90%86/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>PS</title>
+        <link>https://www.alltoone.eu.org/categories/ps/</link>
+        <pubDate>Fri, 05 Aug 2022 00:20:00 +0800</pubDate>
+        
+        <guid>https://www.alltoone.eu.org/categories/ps/</guid>
         <description></description>
         </item>
         <item>

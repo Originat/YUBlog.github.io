@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>CloudFlare on 静语忆昔</title>
+        <link>https://www.alltoone.eu.org/categories/cloudflare/</link>
+        <description>Recent content in CloudFlare on 静语忆昔</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Mon, 10 Oct 2022 01:01:00 +0800</lastBuildDate><atom:link href="https://www.alltoone.eu.org/categories/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>使用 CloudFlare Pages 进行反代</title>
+        <link>https://www.alltoone.eu.org/p/cloudflarepages-fandaili/</link>
+        <pubDate>Mon, 10 Oct 2022 01:01:00 +0800</pubDate>
+        
+        <guid>https://www.alltoone.eu.org/p/cloudflarepages-fandaili/</guid>
+        <description>简介 Cloudflare Pages 是Cloudflare推出的静态网站托管服务，功能和 Github Pages 相似，可以存放静态网页，还可以直接部署前端项目。如果你的网站只是静态博客或帮助文档的话，可以完全不需要购买服务器。直接部署到 Cloudflare Pages 服务上。
+准备材料 Github/ GitLab账号 CloudFlare 账号
+CloudFlare Pages 反代步骤 在 Github 上创建新项目并新建 &amp;ldquo;_worker.js&amp;rdquo; 名字的文件 把 CloudFlare Pages 反代代码写入文件中（代码类型在文章后面，自行选择），把文件中的 app.example.com 换成反代地址
+在 CloudFlare 上找到 &amp;ldquo;Pages&amp;rdquo; 并创建项目 在 Github 账号上选择刚创建的项目 填入需要的名称，其他设置默认 显示成功即可 进行自定义域名，按 &amp;ldquo;继续处理项目&amp;rdquo; 点击 &amp;ldquo;自定义域&amp;rdquo; 填写自己的域名 提示：该域名需先添加到 CloudFlare 中
+CloudFlare Pages 反代代码参考 CloudFlare Pages 一网站反代代码 1 2 3 4 5 6 7 8 9 10 11 export default { async fetch(request, env) { let url = new URL(request.</description>
+        </item>
+        
+    </channel>
+</rss>
