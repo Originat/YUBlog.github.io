@@ -6,20 +6,44 @@
         <description>Recent content in Categories on 静语忆昔</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 10 Oct 2022 01:01:00 +0800</lastBuildDate><atom:link href="https://www.alltoone.eu.org/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>CloudFlare</title>
-        <link>https://www.alltoone.eu.org/categories/cloudflare/</link>
-        <pubDate>Mon, 10 Oct 2022 01:01:00 +0800</pubDate>
+        <lastBuildDate>Tue, 08 Nov 2022 23:00:00 +0800</lastBuildDate><atom:link href="https://www.alltoone.eu.org/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>DDNS</title>
+        <link>https://www.alltoone.eu.org/categories/ddns/</link>
+        <pubDate>Tue, 08 Nov 2022 23:00:00 +0800</pubDate>
         
-        <guid>https://www.alltoone.eu.org/categories/cloudflare/</guid>
+        <guid>https://www.alltoone.eu.org/categories/ddns/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>NAS</title>
+        <link>https://www.alltoone.eu.org/categories/nas/</link>
+        <pubDate>Tue, 08 Nov 2022 23:00:00 +0800</pubDate>
+        
+        <guid>https://www.alltoone.eu.org/categories/nas/</guid>
         <description></description>
         </item>
         <item>
         <title>笔记</title>
         <link>https://www.alltoone.eu.org/categories/%E7%AC%94%E8%AE%B0/</link>
-        <pubDate>Mon, 10 Oct 2022 01:01:00 +0800</pubDate>
+        <pubDate>Tue, 08 Nov 2022 23:00:00 +0800</pubDate>
         
         <guid>https://www.alltoone.eu.org/categories/%E7%AC%94%E8%AE%B0/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>内网穿透</title>
+        <link>https://www.alltoone.eu.org/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</link>
+        <pubDate>Tue, 08 Nov 2022 23:00:00 +0800</pubDate>
+        
+        <guid>https://www.alltoone.eu.org/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>CloudFlare</title>
+        <link>https://www.alltoone.eu.org/categories/cloudflare/</link>
+        <pubDate>Mon, 10 Oct 2022 01:01:00 +0800</pubDate>
+        
+        <guid>https://www.alltoone.eu.org/categories/cloudflare/</guid>
         <description></description>
         </item>
         <item>

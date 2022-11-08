@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='DDNS、内网穿透'><title>NAS 外网访问</title>
+
+<link rel='canonical' href='https://www.alltoone.eu.org/p/nas-intranet-penetration/'>
+
+<link rel="stylesheet" href="/scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css"><meta property='og:title' content='NAS 外网访问'>
+<meta property='og:description' content='DDNS、内网穿透'>
+<meta property='og:url' content='https://www.alltoone.eu.org/p/nas-intranet-penetration/'>
+<meta property='og:site_name' content='静语忆昔'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='技术类' /><meta property='article:published_time' content='2022-11-08T23:00:00&#43;08:00'/><meta property='article:modified_time' content='2022-11-08T23:00:00&#43;08:00'/>
+<meta name="twitter:title" content="NAS 外网访问">
+<meta name="twitter:description" content="DDNS、内网穿透"><script async defer data-website-id="b4c53d76-ec3f-4534-9481-f3d1b73bf451" src="https://umami-seven-plum.vercel.app/yublog.js"></script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu66a60ebc56668b64edd7b3b7f8e485ac_966183_300x0_resize_box_3.png" width="300"
+                            height="298" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">静语忆昔</a></h1>
+            <h2 class="site-description">你比想象の，更有力量!</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Originat'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.alltoone.eu.org/index.xml'
+                        target="_blank"
+                        title="Rss"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rss" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="5" cy="19" r="1" />
+  <path d="M4 4a16 16 0 0 1 16 16" />
+  <path d="M4 11a9 9 0 0 1 9 9" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://t.me/alltooneorg'
+                        target="_blank"
+                        title="Telegram"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%AC%94%E8%AE%B0/" >
+                笔记
+            </a>
+        
+            <a href="/categories/nas/" >
+                NAS
+            </a>
+        
+            <a href="/categories/ddns/" >
+                DDNS
+            </a>
+        
+            <a href="/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" >
+                内网穿透
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/nas-intranet-penetration/">NAS 外网访问</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            DDNS、内网穿透
+        </h3>
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 08, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="简介">简介</h2>
+<blockquote>
+<ol>
+<li><code>DDNS 概念</code>(有公网IP)：
+DDNS 将用户的动态 IP 地址映射到一个固定的域名解析服务上，用户每次连接网络的时候客户端程序就会通过信息传递把该主机的动态 IP 地址传送给位于服务商主机上的服务器程序，服务器程序负责提供 DNS 服务并实现动态域名解析。</li>
+<li><code>内网穿透概念</code>(无公网IP)：
+通过在有公网 IP 的服务器上运行反向代理服务与局域网内某主机上运行的反向代理服务（Web 服务器）之间建立一个安全的通道。远程通过访问公有云主机反向代理服务，跳到局域网服务器，并可以通过它来间接访问局域网内其它主机。</li>
+</ol>
+</blockquote>
+<h2 id="两者对比">两者对比</h2>
+<p>概括：优先选 DDNS</p>
+<h3 id="ddns">DDNS</h3>
+<p>优点：点对点，速度有保障，稳定、延迟低（上传速度决定最大速度），不需要单独服务器
+缺点：需要公网 IP</p>
+<h3 id="内网穿透">内网穿透</h3>
+<p>优点：无需公网 IP，组网更灵活
+缺点：服务器的线路决定了访问的速度，需要单独服务器</p>
+<h2 id="如何部署-ddns">如何部署 DDNS</h2>
+<h3 id="思路ddns">思路（DDNS）</h3>
+<ol>
+<li>因现在家用网络申请 ipv4 公网 IP 很难，现在国家在大力推进 ipv6 的建设，所以只要我们的路由器支持 ipv6，都能使用公网的 ipv6，在路由器上的 ipv6 的上网方式中选择 Native 模式，这样才能给每一个机器分配公网的 ipv6 的 IP （这里有个坑，有些路由器（如小米）默认开启 ipv6 外网访问的防火墙，导致外网无法访问，这里需要手动关掉）</li>
+<li>把 ipv6 地址映射到提供 DDNS 服务的域名，远程通过此域名来访问目标局域网 NAS</li>
+</ol>
+<h3 id="部署-cloudflare-ddns">部署 CloudFlare DDNS</h3>
+<p>因群晖（系统版本7.0）原生不支持 CloudFlare DDNS，所以需要手动添加 CloudFlare DDNS
+方法一：把代码添加进原生 DDNS 服务中
+方法二：使用 docker 部署）</p>
+<h4 id="准备材料-cf">准备材料 （CF）</h4>
+<ol>
+<li>群晖（系统版本7.0）</li>
+<li>CloudFlare 账号</li>
+<li>公网 IP</li>
+</ol>
+<h4 id="原生-ddns-配置部署">原生 DDNS 配置部署</h4>
+<p>参考：<a class="link" href="https://www.ioiox.com/archives/105.html"  target="_blank" rel="noopener"
+    >群晖NAS网络服务 - 原生 DDNS 部署配置 Cloudflare DDNS 动态域名解析</a></p>
+<h4 id="使用-docker-部署">使用 docker 部署</h4>
+<p>参考：<a class="link" href="https://www.ytc233.top/archives/40/"  target="_blank" rel="noopener"
+    >群晖（DSM7.0）使用Cloudflare进行DDNS教程</a></p>
+<h2 id="如何部署内网穿透">如何部署内网穿透</h2>
+<p>内网穿透有两大类：商家提供服务器和自建服务器</p>
+<ol>
+<li>
+<p>提供内网穿透的商家有很多，如花生壳、CloudFlare&hellip;&hellip;，使用国内的商家，延迟低，但是宽带小，使用国外的商家延迟高</p>
+</li>
+<li>
+<p>自建服务器的话，需要使用 NPS 、 FRP 等一些开源软件，使用国内服务器，延迟低，宽带小，使用国外的服务器，需要选择优秀的线路，不然延迟很高</p>
+</li>
+</ol>
+<h3 id="思路-内网穿透">思路 (内网穿透)</h3>
+<ol>
+<li>NAS 安装内网穿透软件（客户端版本），服务器安装内网穿透软件（服务器版本）</li>
+<li>客户端发送数据到有公网 IP 的服务端，服务端把客户端发来的数据经公网 IP 转发给访问的用户</li>
+</ol>
+<h3 id="部署-nps">部署 NPS</h3>
+<h4 id="准备材料-nps">准备材料 (NPS)</h4>
+<ol>
+<li>群晖（系统版本7.0）</li>
+<li>一台拥有公网 IP 的服务器</li>
+<li>NPS （服务器版本）、NPC （客户端版本）</li>
+</ol>
+<h4 id="群晖部署-nps-内网穿透">群晖部署 NPS 内网穿透</h4>
+<p>参考：<a class="link" href="https://lyphix.im/%E7%BE%A4%E6%99%96%E9%83%A8%E7%BD%B2nps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"  target="_blank" rel="noopener"
+    >群晖部署 NPS 内网穿透</a></p>
+<p>踩坑：但是我部署时，NPC Docker 版本（v0.26.10）不支持群晖（DSM 7.0）</p>
+<h3 id="部署-cloudflare-免费隧道">部署 Cloudflare 免费隧道</h3>
+<p>优点：如果 Cloudflare 不出幺蛾子，理论上可以永久使用
+缺点：延迟很高</p>
+<h4 id="准备材料--cf-隧道">准备材料 ( CF 隧道)</h4>
+<ol>
+<li>群晖（系统版本7.0）</li>
+<li>CloudFlare 账号</li>
+<li>银行卡（需要验证）</li>
+</ol>
+<h4 id="cloudflare-免费隧道穿透内网群晖">Cloudflare 免费隧道穿透内网群晖</h4>
+<p>参考：<a class="link" href="https://itquan.net/13117.html"  target="_blank" rel="noopener"
+    >Cloudflare 免费隧道穿透内网群晖无需端口、公网IP、服务器</a></p>
+<h2 id="总结">总结</h2>
+<p>推荐用法组合：</p>
+<ol>
+<li>DDNS + CDN : 可解决客户端无法访问 ipv6 的情况</li>
+<li>Cloudflare 免费隧道 + CDN ：解决延迟高的问题</li>
+</ol>
+<h2 id="参考">参考</h2>
+<ol>
+<li><a class="link" href="https://marlous.github.io/2018/11/11/%E5%88%A9%E7%94%A8-DDNS%E3%80%81%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%BB%E6%9C%BA/"  target="_blank" rel="noopener"
+    >利用 DDNS、内网穿透远程访问局域网主机</a></li>
+<li><a class="link" href="https://blog.csdn.net/weixin_40444691/article/details/112860529"  target="_blank" rel="noopener"
+    >【群晖NAS】真·免费内网穿透方案 及踩坑合集</a></li>
+<li><a class="link" href="https://0xo.net/87"  target="_blank" rel="noopener"
+    >群晖 NAS 公网 IP 使用 DDNS 自定义域名 HTTPS 外网访问</a></li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%8A%80%E6%9C%AF%E7%B1%BB/">技术类</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/cloudflarepages-fandaili/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用 CloudFlare Pages 进行反代</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/qinglong-paas/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用 PAAS 搭建青龙面板</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/arpt-bot-fly.io/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用 Fly.io 搭建 ARPT-Bot</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/alist.flyio.alwaysdata.render/">
+        
+        
+            <div class="article-image">
+                <img src="/p/alist.flyio.alwaysdata.render/alist_1.085f1b3f156ef1aac0fa1f3148817eeb_hue451d6ba0d494bc0fc4bf142b88156b3_1811362_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 使用免费 PAAS 搭建 Alist"
+                        data-key="alist.flyio.alwaysdata.render" 
+                        data-hash="md5-CF8bPxVu8arA&#43;h8xSIF&#43;6w==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用免费 PAAS 搭建 Alist</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/arpt-bot/">
+        
+        
+            <div class="article-image">
+                <img src="/p/arpt-bot/arpt-bot.510884db9e3d3fea13959279dee65b73_hubf92167c8ef5014ddf3c863fd27ea34e_43585_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 使用VPS搭建ARPT-Bot"
+                        data-key="arpt-bot" 
+                        data-hash="md5-UQiE2549P&#43;oTlZJ53uZbcw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">使用VPS搭建ARPT-Bot</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div id="cusdis_thread"
+  data-host="https://cusdis-e95vfq1tq-originat.vercel.app"
+  data-app-id="35a74cb5-fde6-4262-b49b-fdf72264bfcd"
+  data-page-id="efa647295b10e6690c4a708a0c958243"
+  data-page-url="https://www.alltoone.eu.org/p/nas-intranet-penetration/"
+  data-page-title="NAS 外网访问"
+></div>
+<script defer src="https://cusdis-e95vfq1tq-originat.vercel.app/js/widget/lang/zh-cn.js"></script>
+<script async defer src="https://cusdis-e95vfq1tq-originat.vercel.app/js/cusdis.es.js"></script>
+
+
+<script>
+    function setCusdisTheme(theme) {
+        let cusdis = document.querySelector('#cusdis_thread iframe');
+        if (cusdis) {
+            window.CUSDIS.setTheme(theme)
+        }
+    }
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        setCusdisTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2022 静语忆昔
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.12.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+
+    
+    <section class="powerby"> 
+        
+        
+        
+            
+            <span id="sitetime"></span><span id="sitetime" style="color: #b89c72;"></span>
+            <script language=javascript>
+                function siteTime(){
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth()+1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    
+
+                    var t1 = Date.UTC(2022,7,11,02,30,0); 
+                    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                    var diff = t2-t1;
+                    var diffYears = Math.floor(diff/years);
+                    var diffDays = Math.floor((diff/days)-diffYears*365);
+                    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+                    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+                    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+                    document.getElementById("sitetime").innerHTML=diffYears+" 年 "+diffDays+" 天 "+diffHours+" 时 "+diffMinutes+" 分 "+diffSeconds+" 秒";
+                }
+                siteTime();
+            </script>
+            <style>
+                #sitetime {
+                    animation: change 50s infinite;
+                    font-weight: 800;
+                }
+            
+                @keyframes change {
+                    0% {
+                        color: #85bfe5;
+                    }
+            
+                    25% {
+                        color: #a08c8c;
+                    }
+            
+                    50% {
+                        color: #746c50;
+                    }
+            
+                    75% {
+                        color: #ddc2ee;
+                    }
+            
+                    100% {
+                        color: #8c98a2;
+                    }
+                }
+            </style>
+        
+        
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#两者对比">两者对比</a>
+      <ol>
+        <li><a href="#ddns">DDNS</a></li>
+        <li><a href="#内网穿透">内网穿透</a></li>
+      </ol>
+    </li>
+    <li><a href="#如何部署-ddns">如何部署 DDNS</a>
+      <ol>
+        <li><a href="#思路ddns">思路（DDNS）</a></li>
+        <li><a href="#部署-cloudflare-ddns">部署 CloudFlare DDNS</a>
+          <ol>
+            <li><a href="#准备材料-cf">准备材料 （CF）</a></li>
+            <li><a href="#原生-ddns-配置部署">原生 DDNS 配置部署</a></li>
+            <li><a href="#使用-docker-部署">使用 docker 部署</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#如何部署内网穿透">如何部署内网穿透</a>
+      <ol>
+        <li><a href="#思路-内网穿透">思路 (内网穿透)</a></li>
+        <li><a href="#部署-nps">部署 NPS</a>
+          <ol>
+            <li><a href="#准备材料-nps">准备材料 (NPS)</a></li>
+            <li><a href="#群晖部署-nps-内网穿透">群晖部署 NPS 内网穿透</a></li>
+          </ol>
+        </li>
+        <li><a href="#部署-cloudflare-免费隧道">部署 Cloudflare 免费隧道</a>
+          <ol>
+            <li><a href="#准备材料--cf-隧道">准备材料 ( CF 隧道)</a></li>
+            <li><a href="#cloudflare-免费隧道穿透内网群晖">Cloudflare 免费隧道穿透内网群晖</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
