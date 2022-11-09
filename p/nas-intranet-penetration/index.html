@@ -344,12 +344,10 @@
     
     <h2 id="简介">简介</h2>
 <blockquote>
-<ol>
-<li><code>DDNS 概念</code>(有公网IP)：
-DDNS 将用户的动态 IP 地址映射到一个固定的域名解析服务上，用户每次连接网络的时候客户端程序就会通过信息传递把该主机的动态 IP 地址传送给位于服务商主机上的服务器程序，服务器程序负责提供 DNS 服务并实现动态域名解析。</li>
-<li><code>内网穿透概念</code>(无公网IP)：
-通过在有公网 IP 的服务器上运行反向代理服务与局域网内某主机上运行的反向代理服务（Web 服务器）之间建立一个安全的通道。远程通过访问公有云主机反向代理服务，跳到局域网服务器，并可以通过它来间接访问局域网内其它主机。</li>
-</ol>
+<p><code>DDNS 概念</code>(有公网IP)：
+DDNS 将用户的动态 IP 地址映射到一个固定的域名解析服务上，用户每次连接网络的时候客户端程序就会通过信息传递把该主机的动态 IP 地址传送给位于服务商主机上的服务器程序，服务器程序负责提供 DNS 服务并实现动态域名解析。
+<code>内网穿透概念</code>(无公网IP)：
+通过在有公网 IP 的服务器上运行反向代理服务与局域网内某主机上运行的反向代理服务（Web 服务器）之间建立一个安全的通道。远程通过访问公有云主机反向代理服务，跳到局域网服务器，并可以通过它来间接访问局域网内其它主机。</p>
 </blockquote>
 <h2 id="两者对比">两者对比</h2>
 <p>概括：优先选 DDNS</p>
@@ -418,7 +416,7 @@ DDNS 将用户的动态 IP 地址映射到一个固定的域名解析服务上�
 <li>Cloudflare 账号</li>
 <li>银行卡（需要验证）</li>
 </ol>
-<h4 id="cloudflare-免费隧道穿透内网群晖">Cloudflare 免费隧道穿透内网群晖</h4>
+<h4 id="cloudflare-免费隧道">Cloudflare 免费隧道</h4>
 <p>参考：<a class="link" href="https://itquan.net/13117.html"  target="_blank" rel="noopener"
     >Cloudflare 免费隧道穿透内网群晖无需端口、公网IP、服务器</a></p>
 <h2 id="总结">总结</h2>
@@ -820,7 +818,7 @@ DDNS 将用户的动态 IP 地址映射到一个固定的域名解析服务上�
         <li><a href="#部署-cloudflare-免费隧道">部署 Cloudflare 免费隧道</a>
           <ol>
             <li><a href="#准备材料--cf-隧道">准备材料 ( CF 隧道)</a></li>
-            <li><a href="#cloudflare-免费隧道穿透内网群晖">Cloudflare 免费隧道穿透内网群晖</a></li>
+            <li><a href="#cloudflare-免费隧道">Cloudflare 免费隧道</a></li>
           </ol>
         </li>
       </ol>
