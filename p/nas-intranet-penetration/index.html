@@ -345,7 +345,7 @@
     <h2 id="简介">简介</h2>
 <blockquote>
 <p><code>DDNS 概念</code>(有公网IP)：
-DDNS 将用户的动态 IP 地址映射到一个固定的域名解析服务上，用户每次连接网络的时候客户端程序就会通过信息传递把该主机的动态 IP 地址传送给位于服务商主机上的服务器程序，服务器程序负责提供 DNS 服务并实现动态域名解析。
+DDNS 将用户的动态 IP 地址映射到一个固定的域名解析服务上，用户每次连接网络的时候客户端程序就会通过信息传递把该主机的动态 IP 地址传送给位于服务商主机上的服务器程序，服务器程序负责提供 DNS 服务并实现动态域名解析。<br>
 <code>内网穿透概念</code>(无公网IP)：
 通过在有公网 IP 的服务器上运行反向代理服务与局域网内某主机上运行的反向代理服务（Web 服务器）之间建立一个安全的通道。远程通过访问公有云主机反向代理服务，跳到局域网服务器，并可以通过它来间接访问局域网内其它主机。</p>
 </blockquote>
@@ -417,8 +417,15 @@ DDNS 将用户的动态 IP 地址映射到一个固定的域名解析服务上�
 <li>银行卡（需要验证）</li>
 </ol>
 <h4 id="cloudflare-免费隧道">Cloudflare 免费隧道</h4>
-<p>参考：<a class="link" href="https://itquan.net/13117.html"  target="_blank" rel="noopener"
-    >Cloudflare 免费隧道穿透内网群晖无需端口、公网IP、服务器</a></p>
+<p>参考：</p>
+<ol>
+<li><a class="link" href="https://itquan.net/13117.html"  target="_blank" rel="noopener"
+    >Cloudflare 免费隧道穿透内网群晖无需端口、公网IP、服务器</a></li>
+<li><a class="link" href="https://lxnchan.cn/cf-tunnel.html"  target="_blank" rel="noopener"
+    >免费内网穿透Cloudflare Tunnel</a></li>
+<li><a class="link" href="https://blog.caomingjun.com/cloudflare-tunnel-speedtest/"  target="_blank" rel="noopener"
+    >Cloudflare Tunnel 速度测试</a></li>
+</ol>
 <h2 id="总结">总结</h2>
 <h3 id="没有优质线路服务器">没有优质线路服务器</h3>
 <p>可使用 CDN 进行加速：</p>
